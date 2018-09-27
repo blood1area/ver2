@@ -1,88 +1,137 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "Демонстрационная версия продукта «1С-Битрикс: Управление сайтом»");
+$APPLICATION->SetPageProperty("title", "Главная");
 $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
-$APPLICATION->SetTitle("Каталог книг");
-?> <?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section.list",
-	"",
-	Array(
-		"IBLOCK_TYPE" => "books",
-		"IBLOCK_ID" => "6",
-		"SECTION_ID" => $_REQUEST["SECTION_ID"],
-		"SECTION_URL" => "/e-store/books/#SECTION_ID#/",
-		"COUNT_ELEMENTS" => "Y",
-		"DISPLAY_PANEL" => "N",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600"
-	)
-);?>
-<hr />
-
-<?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.top",
-	"",
-	Array(
-		"IBLOCK_TYPE" => "books",
-		"IBLOCK_ID" => "6",
-		"ELEMENT_SORT_FIELD" => "sort",
-		"ELEMENT_SORT_ORDER" => "asc",
-		"SECTION_URL" => "/e-store/books/#SECTION_ID#/",
-		"DETAIL_URL" => "/e-store/books/#SECTION_ID#/#ELEMENT_ID#/",
-		"BASKET_URL" => "/personal/cart/",
-		"ACTION_VARIABLE" => "action",
-		"PRODUCT_ID_VARIABLE" => "id",
-		"SECTION_ID_VARIABLE" => "SECTION_ID",
-		"DISPLAY_COMPARE" => "N",
-		"ELEMENT_COUNT" => "3",
-		"LINE_ELEMENT_COUNT" => "1",
-		"PROPERTY_CODE" => Array(),
-		"PRICE_CODE" => Array("RETAIL"),
-		"USE_PRICE_COUNT" => "N",
-		"SHOW_PRICE_COUNT" => "1",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600"
-	)
-);?>
-
-<h2>Видео-новости</h2>
-
-<?$APPLICATION->IncludeComponent(
-	"bitrix:player",
-	"",
-	Array(
-		"PLAYER_TYPE" => "auto",
-		"USE_PLAYLIST" => "N",
-		"PATH" => "/upload/intro.flv",
-		"WIDTH" => "400",
-		"HEIGHT" => "324",
-		"FULLSCREEN" => "Y",
-		"SKIN_PATH" => "/bitrix/components/bitrix/player/mediaplayer/skins",
-		"SKIN" => "bitrix.swf",
-		"CONTROLBAR" => "bottom",
-		"WMODE" => "transparent",
-		"HIDE_MENU" => "N",
-		"SHOW_CONTROLS" => "Y",
-		"SHOW_STOP" => "N",
-		"SHOW_DIGITS" => "Y",
-		"CONTROLS_BGCOLOR" => "FFFFFF",
-		"CONTROLS_COLOR" => "000000",
-		"CONTROLS_OVER_COLOR" => "000000",
-		"SCREEN_COLOR" => "000000",
-		"WMODE_WMV" => "window",
-		"AUTOSTART" => "N",
-		"REPEAT" => "N",
-		"VOLUME" => "90",
-		"DISPLAY_CLICK" => "play",
-		"MUTE" => "N",
-		"HIGH_QUALITY" => "Y",
-		"ADVANCED_MODE_SETTINGS" => "N",
-		"BUFFER_LENGTH" => "10",
-		"DOWNLOAD_LINK_TARGET" => "_self"
-	),
-false
-);?>
-
-<!-- --><!-- -->
-
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+$APPLICATION->SetTitle("Главная");
+?>			<section class="content">
+				<div class="work_area width_960">
+					<div class="slider">
+						<ul class="bxslider">
+							<li>
+								<div class="banner">
+									<img src="<?=SITE_TEMPLATE_PATH?>/images/test_slider_1.png" alt="" title="" />
+									<div class="banner_content">
+										<h1>Купи Роллс Ройс, получи Отчество к своему имени</h1>
+										<h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире <a href="#1" class="detail_link">подробнее</a></h2>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="banner">
+									<img src="<?=SITE_TEMPLATE_PATH?>/images/test_slider_2.png" alt="" title="" />
+									<div class="banner_content">
+										<h1>Купи Астон Мартин, получи секретное Задание</h1>
+										<h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире <a href="#2" class="detail_link">подробнее</a></h2>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="banner">
+									<img src="<?=SITE_TEMPLATE_PATH?>/images/test_slider_3.png" alt="" title="" />
+									<div class="banner_content">
+										<h1>Купи Бентли, получи бейсболку</h1>
+										<h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире <a href="#3" class="detail_link">подробнее</a></h2>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<h2 class="push_right">Модели недели</h2>
+					<section class="product_line">
+						<figure class="product_item">
+							<div class="product_item_pict">
+								<a href="#">
+									<img src="<?=SITE_TEMPLATE_PATH?>/images/test_top_week_1.png" alt="BMW X3 2.0d" title="BMW X3 2.0d"/>
+								</a>
+							</div>
+							<figcaption>
+								<h3><a href="#">BMW X3 2.0d</a></h3>
+								<p class="product_item_price dark_grey">2 230 000 руб.</p>
+								<a class="buy_button inverse inline-block pie" href="#">В корзину</a>
+							</figcaption>
+						</figure>
+						<figure class="product_item">
+							<div class="product_item_label new"></div>
+							<div class="product_item_pict">
+								<a href="#">
+									<img src="<?=SITE_TEMPLATE_PATH?>/images/test_top_week_2.png" alt="AUDI A6 3.0 TFSI" title="AUDI A6 3.0 TFSI"/>
+								</a>
+							</div>
+							<figcaption>
+								<h3><a href="#">AUDI A6 3.0 TFSI</a></h3>
+								<p class="product_item_price dark_grey">2 870 000 руб.</p>
+								<a class="buy_button inverse inline-block pie" href="#">В корзину</a>
+							</figcaption>
+						</figure>
+						<figure class="product_item">
+							<div class="product_item_label sale"></div>
+							<div class="product_item_pict">
+								<a href="#">
+									<img src="<?=SITE_TEMPLATE_PATH?>/images/test_top_week_3.png" alt="Mercedes-Benz A200" title="Mercedes-Benz A200"/>
+								</a>
+							</div>
+							<figcaption>
+								<h3><a href="#">Mercedes-Benz A200</a></h3>
+								<p class="product_item_price dark_grey">1 310 000 руб.</p>
+								<a class="buy_button inverse inline-block pie" href="#">В корзину</a>
+							</figcaption>
+						</figure>
+						<figure class="product_item">
+							<div class="product_item_pict">
+								<a href="#">
+									<img src="<?=SITE_TEMPLATE_PATH?>/images/no-image.jpg" alt="BMW Z4 sDrive35i" title="BMW Z4 sDrive35i"/>
+								</a>
+							</div>
+							<figcaption>
+								<h3><a href="#">BMW Z4 sDrive35i</a></h3>
+								<p class="product_item_price">3 532 000 руб.</p>
+								<a class="buy_button inverse inline-block pie" href="#">В корзину</a>
+							</figcaption>
+						</figure>
+					</section>
+					<section class="news_block inverse">
+						<h2 class="inline-block">Новости</h2><span class="all_list"> / <a href="#" class="text_decor_none"><b>Все</b></a></span>
+						<div>
+							<figure class="news_item">
+								<a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/images/test_news_1.png" alt="" title="" /></a>
+								<figcaption class="news_item_description">
+									<h3><a href="#">Парадигма просветляет архетип</a></h3>
+									<div class="news_item_anons">
+										<a href="#" class="text_decor_none">
+											Парадигма просветляет архетип, таким образом, стратегия поведения, выгодная отдельному человеку
+										</a>
+									</div>
+									<div class="news_item_date grey">01 Янв 2013</div>
+								</figcaption>
+							</figure>
+							<figure class="news_item">
+								<a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/images/test_news_2.png" alt="" title="" /></a>
+								<figcaption class="news_item_description">
+									<h3><a href="#">Парадигма просветляет архетип</a></h3>
+									<div class="news_item_anons">
+										<a href="#" class="text_decor_none">
+											Парадигма просветляет архетип, таким образом, стратегия поведения, выгодная отдельному человеку
+										</a>
+									</div>
+									<div class="news_item_date grey">01 Янв 2013</div>
+								</figcaption>
+							</figure>
+							<figure class="news_item">
+								<a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/images/test_news_3.png" alt="" title="" /></a>
+								<figcaption class="news_item_description">
+									<h3><a href="#">Парадигма просветляет архетип</a></h3>
+									<div class="news_item_anons">
+										<a href="#" class="text_decor_none">
+											Парадигма просветляет архетип, таким образом, стратегия поведения, выгодная отдельному человеку
+										</a>
+									</div>
+									<div class="news_item_date grey">01 Янв 2013</div>
+								</figcaption>
+							</figure>
+						</div>
+					</section>
+				</div>
+			</section>
+			<div class="d_footer width_960"></div>
+			<div class="clear"></div>
+		</div><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
