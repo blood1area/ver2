@@ -9,28 +9,28 @@ IncludeTemplateLangFile(__FILE__);
 <!--[if IE 9]>    <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html> <!--<![endif]-->
 	<head>
+		<link rel="stylesheet" type="text/css" 	href="local/templates/.default/css/base.css"/>
 		<?$APPLICATION->ShowHead()?>
 		<title><?$APPLICATION->ShowTitle()?></title>
-		<link href="<?=SITE_TEMPLATE_PATH?>/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/css/base.css');?>
+		<link href="local/templates/.default/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-		<link rel="stylesheet" 			href="<?=SITE_TEMPLATE_PATH?>/js/bxslider/jquery.bxslider.css" />
+		<link rel="stylesheet" 			href="local/templates/.default/js/bxslider/jquery.bxslider.css" />
 
-		<script type="text/javascript" 		src="<?=SITE_TEMPLATE_PATH?>/js/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" 		src="<?=SITE_TEMPLATE_PATH?>/js/jquery.placeholder.js"></script>
-		<script type="text/javascript" 		src="<?=SITE_TEMPLATE_PATH?>/js/bxslider/jquery.bxslider.js"></script>
-		<script type="text/javascript" 		src="<?=SITE_TEMPLATE_PATH?>/js/default_script.js"></script>
+		<script type="text/javascript" 		src="local/templates/.default/js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" 		src="local/templates/.default/js/jquery.placeholder.js"></script>
+		<script type="text/javascript" 		src="local/templates/.default/js/bxslider/jquery.bxslider.js"></script>
+		<script type="text/javascript" 		src="local/templates/.default/js/default_script.js"></script>
 
-		<link type="text/css" 			href="<?=SITE_TEMPLATE_PATH?>/js/jquery.ui.selectmenu/jquery.ui.core.css" rel="stylesheet" />
-		<link type="text/css" 			href="<?=SITE_TEMPLATE_PATH?>/js/jquery.ui.selectmenu/jquery.ui.theme.css" rel="stylesheet" />
-		<link type="text/css" 			href="<?=SITE_TEMPLATE_PATH?>/js/jquery.ui.selectmenu/jquery.ui.selectmenu.css" rel="stylesheet" />
+		<link type="text/css" 			href="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.core.css" rel="stylesheet" />
+		<link type="text/css" 			href="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.theme.css" rel="stylesheet" />
+		<link type="text/css" 			href="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.selectmenu.css" rel="stylesheet" />
 		
-		<script type="text/javascript" 		src="<?=SITE_TEMPLATE_PATH?>/js/jquery.ui.selectmenu/jquery.ui.core.js"></script>
-		<script type="text/javascript" 		src="<?=SITE_TEMPLATE_PATH?>/js/jquery.ui.selectmenu/jquery.ui.widget.js"></script>
-		<script type="text/javascript" 		src="<?=SITE_TEMPLATE_PATH?>/js/jquery.ui.selectmenu/jquery.ui.position.js"></script>
-		<script type="text/javascript" 		src="<?=SITE_TEMPLATE_PATH?>/js/jquery.ui.selectmenu/jquery.ui.selectmenu.js"></script>
+		<script type="text/javascript" 		src="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.core.js"></script>
+		<script type="text/javascript" 		src="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.widget.js"></script>
+		<script type="text/javascript" 		src="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.position.js"></script>
+		<script type="text/javascript" 		src="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.selectmenu.js"></script>
 		<!--[if lt IE 9]>
-			<script src="<?=SITE_TEMPLATE_PATH?>/js/html5shiv.js"></script>
+			<script src="local/templates/.default/js/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
