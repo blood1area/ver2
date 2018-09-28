@@ -1,0 +1,5 @@
+<h1>h1. Bootstrap заголовок <small>Вторичный текст</small></h1>
+
+<div class="quote <!-- dark_grey -->">
+	Цитата справа
+</div>

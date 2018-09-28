@@ -3,19 +3,23 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 		die();
 IncludeTemplateLangFile(__FILE__);
 ?>
-<!DOCTYPE>
+<!DOCTYPE html>
 <!--[if IE 7]>    <html class="ie7"> <![endif]-->
 <!--[if IE 8]>    <html class="ie8> <![endif]-->
 <!--[if IE 9]>    <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html> <!--<![endif]-->
 	<head>
-		<link rel="stylesheet" type="text/css" 	href="/local/templates/.default/css/base.css"/>
-		<?$APPLICATION->ShowHead()?>
-		<title><?$APPLICATION->ShowTitle()?></title>
+		<?
+			$APPLICATION->ShowHead();
+			$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/../.default/css/base.css');
+		?>
+		<title><?$APPLICATION->ShowTitle();?></title>
 		<link href="/local/templates/.default/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-		<link rel="stylesheet" 				href="/local/templates/.default/js/bxslider/jquery.bxslider.css"/>
+		<link rel="stylesheet" 				href="/local/templates/.default/js/bxslider/jquery.bxslider.css"/>	
 		
+		<? ?>
+
 		<script type="text/javascript" 	src="/local/templates/.default/js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" 	src="/local/templates/.default/js/jquery.placeholder.js"></script>
 		<script type="text/javascript" 	src="/local/templates/.default/js/bxslider/jquery.bxslider.js"></script>
@@ -94,27 +98,27 @@ IncludeTemplateLangFile(__FILE__);
 			<section class="content">
 				<div class="work_area width_960">
 					<nav class="nav_chain">
-							<a href="/">Главная</a>
-							<span class="nav_arrow inline-block"></span>
-							<span>Легковые</span>
+						<a href="/">Главная</a>
+						<span class="nav_arrow inline-block"></span>
+						<span>Легковые</span>
 					</nav>
 					<section class="content_area">
 						<aside class="left_block">
-						<nav>
-							<ul class="left_menu">
-								<li>
-									<span>Информация</span>
-									<ul>
-										<li><a href="#">О компнаии</a></li>
-										<li><a href="#">Контактная информация</a></li>
-										<li><a href="#">Условия продаж</a></li>
-										<li><a href="#">Финансовый отдел</a></li>
-										<li><a href="#">Для клиентов</a></li>
-									</ul>
-								</li>
-							</ul>
-						</nav>
+							<nav>
+								<ul class="left_menu">
+									<li>
+										<span>Информация</span>
+										<ul>
+											<li><a href="#">О компнаии</a></li>
+											<li><a href="#">Контактная информация</a></li>
+											<li><a href="#">Условия продаж</a></li>
+											<li><a href="#">Финансовый отдел</a></li>
+											<li><a href="#">Для клиентов</a></li>
+										</ul>
+									</li>
+								</ul>
+							</nav>
 						</aside>
-						<h1>Заголовок данной страницы</h1>
+						<h1><?$APPLICATION->ShowTitle(FALSE)?></h1>
 						
 					

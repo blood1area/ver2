@@ -3,7 +3,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 	die();
 IncludeTemplateLangFile(__FILE__);
 ?>
-﻿<!DOCTYPE>
+﻿<!DOCTYPE html>
 <!--[if IE 7]>    <html class="ie7"> <![endif]-->
 <!--[if IE 8]>    <html class="ie8> <![endif]-->
 <!--[if IE 9]>    <html class="ie9"> <![endif]-->

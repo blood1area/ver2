@@ -8,7 +8,7 @@ slider*/
 /*news*/
 .news_block
 {
-	background: url("images/dark_bg.png") 0 0 repeat;
+	background: url("../.default/images/dark_bg.png") 0 0 repeat;
 	overflow: hidden;
 	padding: 14px 22px;
 }
@@ -83,7 +83,7 @@ slider*/
 }
 .page_nav .prev, .page_nav .next
 {
-	background: url("images/sprite.png") no-repeat;
+	background: url("../.default/images/sprite.png") no-repeat;
 	height: 15px;
 	padding: 0;
 	width: 9px;
@@ -112,7 +112,7 @@ slider*/
 .filter
 {
 	background: #f6f6f6; /* Old browsers */
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y2ZjZmNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYWVhZWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: url(data:../.default/image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y2ZjZmNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYWVhZWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 	background: -moz-linear-gradient(top, #f6f6f6 0%, #eaeaea 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f6), color-stop(100%,#eaeaea)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top, #f6f6f6 0%,#eaeaea 100%); /* Chrome10+,Safari5.1+ */
@@ -187,52 +187,52 @@ slider*/
 	width: 600px;
 	text-align: center;
 }
-	.b-product-photo__list {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-		.b-product-photo__list-item {
-			margin: 0;
-			padding: 0;
-			background: none;
-		}
-			.b-product-photo__list-item__content {
-				margin: 0 auto;
-				max-width: 100%;
-				width: 528px;
-				height: 386px;
-			}
-	.b-product-photo__thumbnail {
-		padding: 10px 0;
-		text-align: center;
-		letter-spacing: -1px;
-		font-size: 1px;
-	}
-		.b-product-photo__thumbnail-item {
-			position: relative;
-			display: inline-block;
-			margin: 0 5px 10px;
-			outline: 0;
-			border: 0;
-			text-decoration: none;
-			font-size: 1px;
-		}
-		.b-product-photo__thumbnail-item.active:before {
-			position: absolute;
-			bottom: 100%;
-			left: 50%;
-			margin-left: -5px;
-			width: 10px;
-			height: 5px;
-			background: url("images/sprite.png") 0 -130px no-repeat;
-			content: "";
-		}
-			.b-product-photo__thumbnail-item__content {
-				width: 78px;
-				height: 58px;
-				border: 1px solid #d5d5d5;
-			}
+.b-product-photo__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.b-product-photo__list-item {
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+.b-product-photo__list-item__content {
+	margin: 0 auto;
+	max-width: 100%;
+	width: 528px;
+	height: 386px;
+}
+.b-product-photo__thumbnail {
+padding: 10px 0;
+text-align: center;
+letter-spacing: -1px;
+font-size: 1px;
+}
+.b-product-photo__thumbnail-item {
+	position: relative;
+	display: inline-block;
+	margin: 0 5px 10px;
+	outline: 0;
+	border: 0;
+	text-decoration: none;
+	font-size: 1px;
+}
+.b-product-photo__thumbnail-item.active:before {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	width: 10px;
+	height: 5px;
+	background: url("../.default/images/sprite.png") 0 -130px no-repeat;
+	content: "";
+}
+.b-product-photo__thumbnail-item__content {
+	width: 78px;
+	height: 58px;
+	border: 1px solid #d5d5d5;
+}
 /***********************************************
  End Слайдер изображений автомобиля
 ***********************************************/
@@ -270,7 +270,7 @@ slider*/
 }
 .slide_button
 {
-	background: url("images/controls.png") 2px -229px;
+	background: url("../.default/images/controls.png") 2px -229px;
 	cursor: pointer;
 	height: 10px;
 	position: absolute;
@@ -299,7 +299,7 @@ slider*/
 }
 .other_view .button
 {
-	background: url("images/controls.png") 100px 100px no-repeat;
+	background: url("../.default/images/controls.png") 100px 100px no-repeat;
 	cursor: pointer;
 	height: 31px;
 	width: 31px;
@@ -352,7 +352,7 @@ slider*/
 }
 .other_items div.current:before, .other_item_current_corner
 {
-	background: url("images/sprite.png") 0 -130px no-repeat;
+	background: url("../.default/images/sprite.png") 0 -130px no-repeat;
 	bottom: 100%;
 	content: "";
 	height: 5px;
