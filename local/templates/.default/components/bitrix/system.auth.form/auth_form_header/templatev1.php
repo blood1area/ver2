@@ -9,7 +9,19 @@ if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'])
 ?>
 
 <?if($arResult["FORM_TYPE"] == "login"):?>
+
+    <?if($arResult["BACKURL"] <> ''):?>
+        <input type="hidden" name="backurl" value="<?=$arResult["BACKURL"]?>" />
+    <?endif?>
+
+    <?foreach ($arResult["POST"] as $key => $value):?>
+        <input type="hidden" name="<?=$key?>" value="<?=$value?>" />
+    <?endforeach?>
+    <input type="hidden" name="AUTH_FORM" value="Y" />
+    <input type="hidden" name="TYPE" value="AUTH" />
+
     <nav class="top_menu grey inline-block">
+        <h1><?echo $arResult["AUTH_REGISTER_URL"]?></h1>
         <a href="<?=$arResult["AUTH_REGISTER_URL"]?>" class="register"><?=GetMessage("AUTH_REGISTER")?></a>
         <a href="<?=$arResult["AUTH_URL"]?>" class="auth"><?=GetMessage("AUTH_LOGIN")?></a>
     </nav>
