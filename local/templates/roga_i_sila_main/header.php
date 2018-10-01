@@ -3,8 +3,8 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 	die();
 IncludeTemplateLangFile(__FILE__);
 
-$pathToDefaultTemplate = '/local/templates/.default'?>
-
+$pathToDefaultTemplate = '/local/templates/.default'
+?>
 ﻿<!DOCTYPE html>
 <!--[if IE 7]>    <html class="ie7"> <![endif]-->
 <!--[if IE 8]>    <html class="ie8> <![endif]-->

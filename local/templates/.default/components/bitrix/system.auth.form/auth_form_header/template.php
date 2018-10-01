@@ -20,7 +20,7 @@ if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'])
 
     <nav class="top_menu grey inline-block">
         <a href="<?=$arResult["AUTH_REGISTER_URL"]?>" class="register"><?=GetMessage("AUTH_REGISTER")?></a>
-        <a href="/auth/" class="auth"><?=GetMessage("AUTH_LOGIN")?></a>
+        <a href="<?=$arResult["AUTH_URL"]?>" class="auth"><?=GetMessage("AUTH_LOGIN")?></a>
     </nav>
 <?
 else:

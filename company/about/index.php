@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Title");
+$APPLICATION->SetTitle("О компании");
 ?><img src="/local/templates/Inner/../.default/images/test_content_big_img.png" alt="" title="">
 <div class="quote dark_grey">
 	 Когда из храма с шумом выбегают мужчины в костюмах демонов и смешиваются с толпой, административно-территориальное деление начинает заснеженный цикл, ни для кого не секрет
