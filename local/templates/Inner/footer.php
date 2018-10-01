@@ -1,5 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-IncludeTemplateLangFile(__FILE__);?>
+IncludeTemplateLangFile(__FILE__);
+
+$pathToDefaultTemplate = '/local/templates/.default'?>
 					</section>
 					<hr class="bottom_line"/>
 				</div>
@@ -14,7 +16,7 @@ IncludeTemplateLangFile(__FILE__);?>
 					<span class="dark_grey all_list">&nbsp;/&nbsp;<a href="#" class="text_decor_none"><b>Все</b></a></span>
 					<div>
 						<figure class="shops_block_item">
-							<a href=""><img src="/local/templates/.default/images/test_shop_1.png" alt="" title="" /></a>
+							<a href=""><img src="<?=$pathToDefaultTemplate?>/images/test_shop_1.png" alt="" title="" /></a>
 							<figcaption class="shops_block_item_description">
 								<h3 class="shops_block_item_name">Салон на братиславской</h3>
 								<p class="dark_grey">Москва, ул. Братиславская, дом 23</p>
@@ -23,7 +25,7 @@ IncludeTemplateLangFile(__FILE__);?>
 							</figcaption>
 						</figure>
 						<figure class="shops_block_item">
-							<a href=""><img src="/local/templates/.default/images/test_shop_2.png" alt="" title="" /></a>
+							<a href=""><img src="<?=$pathToDefaultTemplate?>/images/test_shop_2.png" alt="" title="" /></a>
 							<figcaption class="shops_block_item_description">
 								<h3 class="shops_block_item_name">Салон на братиславской</h3>
 								<p class="dark_grey">Москва, ул. Братиславская, дом 23</p>

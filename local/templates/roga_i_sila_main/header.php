@@ -1,41 +1,48 @@
 <?
-define("NEED_AUTH", true);
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 	die();
 IncludeTemplateLangFile(__FILE__);
-?>
+
+$pathToDefaultTemplate = '/local/templates/.default'?>
+
 ﻿<!DOCTYPE html>
 <!--[if IE 7]>    <html class="ie7"> <![endif]-->
 <!--[if IE 8]>    <html class="ie8> <![endif]-->
 <!--[if IE 9]>    <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html> <!--<![endif]-->
 	<head>
-		<link rel="stylesheet" type="text/css" 	href="local/templates/.default/css/base.css"/>
-		<?$APPLICATION->ShowHead()?>
-		<title><?$APPLICATION->ShowTitle()?></title>
-		<link href="local/templates/.default/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<title><?$APPLICATION->ShowTitle();?></title>
+        <?
+        $APPLICATION->ShowHead();
+        use Bitrix\Main\Page\Asset;
 
-		<link rel="stylesheet" 			href="local/templates/.default/js/bxslider/jquery.bxslider.css" />
+        Asset::getInstance()->addString('<link href="'.$pathToDefaultTemplate.'/favicon.ico" rel="shortcut icon" type="image/x-icon" />');
 
-		<script type="text/javascript" 		src="local/templates/.default/js/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" 		src="local/templates/.default/js/jquery.placeholder.js"></script>
-		<script type="text/javascript" 		src="local/templates/.default/js/bxslider/jquery.bxslider.js"></script>
-		<script type="text/javascript" 		src="local/templates/.default/js/default_script.js"></script>
+        Asset::getInstance()->addCss($pathToDefaultTemplate . "/css/base.css");
 
-		<link type="text/css" 			href="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.core.css" rel="stylesheet" />
-		<link type="text/css" 			href="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.theme.css" rel="stylesheet" />
-		<link type="text/css" 			href="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.selectmenu.css" rel="stylesheet" />
-		
-		<script type="text/javascript" 		src="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.core.js"></script>
-		<script type="text/javascript" 		src="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.widget.js"></script>
-		<script type="text/javascript" 		src="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.position.js"></script>
-		<script type="text/javascript" 		src="local/templates/.default/js/jquery.ui.selectmenu/jquery.ui.selectmenu.js"></script>
+        Asset::getInstance()->addCss($pathToDefaultTemplate . "/js/bxslider/jquery.bxslider.css");
+
+        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery-1.9.1.min.js");
+        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery.placeholder.js");
+        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/bxslider/jquery.bxslider.js");
+        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/default_script.js");
+
+        Asset::getInstance()->addCss($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.core.css");
+        Asset::getInstance()->addCss($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.theme.css");
+        Asset::getInstance()->addCss($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.selectmenu.css");
+
+        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.core.js");
+        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.widget.js");
+        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.position.js");
+        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.selectmenu.js");
+        ?>
+
 		<!--[if lt IE 9]>
-			<script src="local/templates/.default/js/html5shiv.js"></script>
+            <script src=<?=CUtil::GetAdditionalFileURL($pathToDefaultTemplate . '/js/html5shiv.js');?></script>
 		<![endif]-->
 	</head>
 	<body>
-		<div id="panel"><?$APPLICATION->ShowPanel();?></div>
+		<?$APPLICATION->ShowPanel();?>
 		<div class="wrapper">
 			<div class="base_layer"></div>
 			<header class="header">
@@ -43,28 +50,17 @@ IncludeTemplateLangFile(__FILE__);
 					<div class="inline-block">
 						<span class="logo inline-block"></span>
 					</div>
-					<nav class="top_menu grey inline-block">
-					<!-- 	<?
-						global $USER;
-						if (!$USER->IsAuthorized()) { ?>
-							<a href="auth/?register=yes" class="register">Регистрация
-							</a>							
-							<a href="auth/" class="auth">Авторизация</a>'
-						<?}else {
-							echo "Вы авторизованы!";
-						}
-						?> -->
 					<?$APPLICATION->IncludeComponent(
-						"bitrix:system.auth.form",
-						"",
-						Array(
-							"FORGOT_PASSWORD_URL" => "",
-							"PROFILE_URL" => "/personal/",
-							"REGISTER_URL" => " /auth/",
-							"SHOW_ERRORS" => "Y"
-						)
-					);?>
-					</nav>
+                        "bitrix:system.auth.form",
+                        "auth_form_header",
+                        Array(
+                            "FORGOT_PASSWORD_URL" => "",
+                            "PROFILE_URL" => "/personal/",
+                            "REGISTER_URL" => "/auth/",
+                            "SHOW_ERRORS" => "Y",
+                            "AUTH_CUSTOM_URL" => "/auth/",
+                        )
+                    );?>
 					<div class="basket_block inline-block">
 						<a href="#" class="basket_product_count inline-block">0</a>
 						<a href="#" class="order_button pie">Оформить заказ</a>

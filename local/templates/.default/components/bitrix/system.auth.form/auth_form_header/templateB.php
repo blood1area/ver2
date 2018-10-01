@@ -21,6 +21,10 @@ if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'])
 <?endforeach?>
 	<input type="hidden" name="AUTH_FORM" value="Y" />
 	<input type="hidden" name="TYPE" value="AUTH" />
+    <nav class="top_menu grey inline-block">
+        <a href="#" class="register">Регистрация</a>
+        <a href="#" class="auth">Авторизация</a>
+    </nav>
 	<table width="95%">
 		<tr>
 			<td colspan="2">
@@ -85,41 +89,41 @@ document.getElementById('bx_auth_secure<?=$arResult["RND"]?>').style.display = '
 		<tr>
 			<td colspan="2"><noindex><a href="<?=$arResult["AUTH_FORGOT_PASSWORD_URL"]?>" rel="nofollow"><?=GetMessage("AUTH_FORGOT_PASSWORD_2")?></a></noindex></td>
 		</tr>
-<?if($arResult["AUTH_SERVICES"]):?>
-		<tr>
-			<td colspan="2">
-				<div class="bx-auth-lbl"><?=GetMessage("socserv_as_user_form")?></div>
-<?
-$APPLICATION->IncludeComponent("bitrix:socserv.auth.form", "icons", 
-	array(
-		"AUTH_SERVICES"=>$arResult["AUTH_SERVICES"],
-		"SUFFIX"=>"form",
-	), 
-	$component, 
-	array("HIDE_ICONS"=>"Y")
-);
-?>
-			</td>
-		</tr>
-<?endif?>
+<?//if($arResult["AUTH_SERVICES"]):?>
+<!--		<tr>-->
+<!--			<td colspan="2">-->
+<!--				<div class="bx-auth-lbl">--><?//=GetMessage("socserv_as_user_form")?><!--</div>-->
+<?//
+//$APPLICATION->IncludeComponent("bitrix:socserv.auth.form", "icons",
+//	array(
+//		"AUTH_SERVICES"=>$arResult["AUTH_SERVICES"],
+//		"SUFFIX"=>"form",
+//	),
+//	$component,
+//	array("HIDE_ICONS"=>"Y")
+//);
+//?>
+<!--			</td>-->
+<!--		</tr>-->
+<?//endif?>
 	</table>
 </form>
 
-<?if($arResult["AUTH_SERVICES"]):?>
-<?
-$APPLICATION->IncludeComponent("bitrix:socserv.auth.form", "", 
-	array(
-		"AUTH_SERVICES"=>$arResult["AUTH_SERVICES"],
-		"AUTH_URL"=>$arResult["AUTH_URL"],
-		"POST"=>$arResult["POST"],
-		"POPUP"=>"Y",
-		"SUFFIX"=>"form",
-	), 
-	$component, 
-	array("HIDE_ICONS"=>"Y")
-);
-?>
-<?endif?>
+<?//if($arResult["AUTH_SERVICES"]):?>
+<?//
+//$APPLICATION->IncludeComponent("bitrix:socserv.auth.form", "",
+//	array(
+//		"AUTH_SERVICES"=>$arResult["AUTH_SERVICES"],
+//		"AUTH_URL"=>$arResult["AUTH_URL"],
+//		"POST"=>$arResult["POST"],
+//		"POPUP"=>"Y",
+//		"SUFFIX"=>"form",
+//	),
+//	$component,
+//	array("HIDE_ICONS"=>"Y")
+//);
+//?>
+<?//endif?>
 
 <?
 elseif($arResult["FORM_TYPE"] == "otp"):
@@ -161,37 +165,38 @@ elseif($arResult["FORM_TYPE"] == "otp"):
 	</table>
 </form>
 
+</div>
 <?
 else:
 ?>
+<!---->
+<!--<form action="--><?//=$arResult["AUTH_URL"]?><!--">-->
+    <nav class="top_menu grey inline-block authorize">
+        <span>Здравствуйте,</span>
+        <a href="#"><b class="user_name"><?=($arResult["USER_NAME"]?$arResult["USER_NAME"]:$arResult["USER_LOGIN"])?></b></a>
+        <a href="<?=$arResult["PROFILE_URL"]?>"><?=GetMessage("AUTH_PROFILE")?></a>
+        <a class="logout" href="?logout=yes"><?=GetMessage("AUTH_LOGOUT_BUTTON")?></a>
+    </nav>
+<!--</form>-->
 
-<nav class="top_menu grey inline-block authorize">
-	<span>Здравствуйте,</span>
-	<a href="<?=$arResult["PROFILE_URL"]?>"><b class="user_name"><?=($arResult["USER_NAME"]?$arResult["USER_NAME"]:$arResult["USER_LOGIN"])?></b></a>
-	<a href="<?=$arResult["PROFILE_URL"]?>">Личный кабинет</a>
-	<a class="logout" href="#">Выйти</a>
-</nav>
-
-<!-- <form action="<?=$arResult["AUTH_URL"]?>">
-	<table width="95%" class = 'top_menu'>
-		<tr>
-			<td align="center">
-				<?
-					echo '<span>Здравствуйте, </span><b class="user_name">'.($arResult["USER_NAME"]?$arResult["USER_NAME"]:$arResult["USER_LOGIN"]).'</b>';
-				?>
-				<a href="<?=$arResult["PROFILE_URL"]?>" title="<?=GetMessage("AUTH_PROFILE")?>"><?=GetMessage("AUTH_PROFILE")?></a>
-			</td>
-		</tr>
-		<tr>
-			<td align="center">
-			<?foreach ($arResult["GET"] as $key => $value):?>
-				<input type="hidden" name="<?=$key?>" value="<?=$value?>" />
-			<?endforeach?>
-			<input type="hidden" name="logout" value="yes" />
-			<input class="logout" type="submit" name="logout_butt" value="<?=GetMessage("AUTH_LOGOUT_BUTTON")?>" />
-			</td>
-		</tr>
-	</table>
-</form> -->
+<!--    <form action="--><?//=$arResult["AUTH_URL"]?><!--">-->
+<!--        <table width="95%">-->
+<!--            <tr>-->
+<!--                <td align="center">-->
+<!--                    --><?//=$arResult["USER_NAME"]?><!--<br />-->
+<!--                    [--><?//=$arResult["USER_LOGIN"]?><!--]<br />-->
+<!--                    <a href="--><?//=$arResult["PROFILE_URL"]?><!--" title="--><?//=GetMessage("AUTH_PROFILE")?><!--">--><?//=GetMessage("AUTH_PROFILE")?><!--</a><br />-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td align="center">-->
+<!--                    --><?//foreach ($arResult["GET"] as $key => $value):?>
+<!--                        <input type="hidden" name="--><?//=$key?><!--" value="--><?//=$value?><!--" />-->
+<!--                    --><?//endforeach?>
+<!--                    <input type="hidden" name="logout" value="yes" />-->
+<!--                    <input type="submit" name="logout_butt" value="--><?//=GetMessage("AUTH_LOGOUT_BUTTON")?><!--" />-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--    </form>-->
 <?endif?>
-</div>
