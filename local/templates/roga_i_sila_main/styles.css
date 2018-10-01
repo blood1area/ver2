@@ -29,6 +29,8 @@
     font-style: italic;
 }
 
+@import url('/local/templates/.default/css/base.css');
+
 body
 {
 	color: #333333;
@@ -107,9 +109,7 @@ h1
 	margin-bottom: 0.4em;
 	margin-top: 0.5em;
 }
-.banner h1{
 
-}
 h2
 {
 	font-size: 1.714em;
