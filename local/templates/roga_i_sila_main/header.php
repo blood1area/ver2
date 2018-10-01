@@ -1,4 +1,5 @@
 <?
+define("NEED_AUTH", true);
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 	die();
 IncludeTemplateLangFile(__FILE__);
@@ -43,8 +44,26 @@ IncludeTemplateLangFile(__FILE__);
 						<span class="logo inline-block"></span>
 					</div>
 					<nav class="top_menu grey inline-block">
-						<a href="#" class="register">Регистрация</a>
-						<a href="#" class="auth">Авторизация</a>
+					<!-- 	<?
+						global $USER;
+						if (!$USER->IsAuthorized()) { ?>
+							<a href="auth/?register=yes" class="register">Регистрация
+							</a>							
+							<a href="auth/" class="auth">Авторизация</a>'
+						<?}else {
+							echo "Вы авторизованы!";
+						}
+						?> -->
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:system.auth.form",
+						"",
+						Array(
+							"FORGOT_PASSWORD_URL" => "",
+							"PROFILE_URL" => "/personal/",
+							"REGISTER_URL" => " /auth/",
+							"SHOW_ERRORS" => "Y"
+						)
+					);?>
 					</nav>
 					<div class="basket_block inline-block">
 						<a href="#" class="basket_product_count inline-block">0</a>

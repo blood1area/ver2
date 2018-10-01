@@ -46,12 +46,16 @@ IncludeTemplateLangFile(__FILE__);
 					<div class="inline-block">
 						<a href="/" class="logo inline-block"></a>
 					</div>
-					<nav class="top_menu grey inline-block authorize">
-						<span>Здравствуйте,</span>
-						<a href="#"><b class="user_name">Иван Владимирович</b></a>
-						<a href="#">Личный кабинет</a>
-						<a class="logout" href="#">Выйти</a>
-					</nav>
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:system.auth.form",
+						"",
+						Array(
+							"FORGOT_PASSWORD_URL" => "",
+							"PROFILE_URL" => "/personal/",
+							"REGISTER_URL" => " /auth/",
+							"SHOW_ERRORS" => "Y"
+						)
+					);?>
 					<div class="basket_block inline-block">
 						<a href="#" class="basket_product_count inline-block">0</a>
 						<a href="#" class="order_button pie">Оформить заказ</a>
