@@ -98,7 +98,15 @@ $pathToDefaultTemplate = '/local/templates/.default'
 							</li>
 							<li><a href="#">Раритетные</a></li>
 							<li><a href="#">Распродажа</a></li>
-							<li><a href="#">Новинки</a></li>
+							<li><a href="#"><?php
+                                    if(\Bitrix\Main\Loader::includeModule('local.lib')) {
+                                        echo 'ldasdasdasdasdasdasdol';
+                                    }
+                                    if(\Bitrix\Main\Loader::includeModule('local.lib')) {
+                                        echo 'ldasdasdasdasdasdasdol';
+                                    }
+                                    ?></a></li>
+<!--							<li><a href="#">Новинки</a></li>-->
 					</ul>
 					</nav>
 				</div>
