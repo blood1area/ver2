@@ -67,12 +67,15 @@ IncludeTemplateLangFile(__FILE__);
 			</header>
 			<section class="fixed_block">
 				<div class="width_960">
-					<form name="search_form" class="search_form pie">
-							<div class="search_form_wrapper">
-								<input type="text" placeholder="Поиск по сайту"/>
-								<input type="submit" value=""/>
-							</div>
-					</form>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:search.form",
+                        "search_form_header",
+                        array(
+                            "COMPONENT_TEMPLATE" => "search_form_header",
+                            "PAGE" => "/search/",
+                            "USE_SUGGEST" => "N"
+                        )
+                    );?>
 					<nav class="main_menu">
 						<ul>
 							<li class="submenu pie">
