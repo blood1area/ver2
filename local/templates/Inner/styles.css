@@ -1,3 +1,4 @@
+@import url('/local/templates/.default/css/base.css');
 @font-face {
     font-family: 'PTSans_Bold';
     src: url('/local/templates/.default/fonts/PTSans_Bold.eot');
@@ -29,8 +30,6 @@
     font-style: italic;
 }
 
-
-@import url('/local/templates/.default/css/base.css');
 
 body{
 	color: #333333;

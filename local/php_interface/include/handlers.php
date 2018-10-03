@@ -1,8 +1,5 @@
-<?php
+<?
 use \Bitrix\Main\EventManager;
-
-if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/modules/custom/include.php"))
-    require_once($_SERVER["DOCUMENT_ROOT"]."/local/modules/custom/include.php");
 
 EventManager::getInstance()->addEventHandler(
     'main',
