@@ -1,3 +1,0 @@
-<?
-Bitrix\Main\Loader::registerAutoLoadClasses();
-?>

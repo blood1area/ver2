@@ -2,8 +2,6 @@
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 	die();
 IncludeTemplateLangFile(__FILE__);
-
-$pathToDefaultTemplate = '/local/templates/.default'
 ?>
 ﻿<!DOCTYPE html>
 <!--[if IE 7]>    <html class="ie7"> <![endif]-->
@@ -16,29 +14,29 @@ $pathToDefaultTemplate = '/local/templates/.default'
         $APPLICATION->ShowHead();
         use Bitrix\Main\Page\Asset;
 
-        Asset::getInstance()->addString('<link href="'.$pathToDefaultTemplate.'/favicon.ico" rel="shortcut icon" type="image/x-icon" />');
+        Asset::getInstance()->addString('<link href="' . SITE_TEMPLATE_PATH_DEFAULT.'/favicon.ico" rel="shortcut icon" type="image/x-icon" />');
 
-        Asset::getInstance()->addCss($pathToDefaultTemplate . "/css/base.css");
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH_DEFAULT . "/css/base.css");
 
-        Asset::getInstance()->addCss($pathToDefaultTemplate . "/js/bxslider/jquery.bxslider.css");
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH_DEFAULT . "/js/bxslider/jquery.bxslider.css");
 
-        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery-1.9.1.min.js");
-        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery.placeholder.js");
-        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/bxslider/jquery.bxslider.js");
-        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/default_script.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH_DEFAULT . "/js/jquery-1.9.1.min.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH_DEFAULT . "/js/jquery.placeholder.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH_DEFAULT . "/js/bxslider/jquery.bxslider.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH_DEFAULT . "/js/default_script.js");
 
-        Asset::getInstance()->addCss($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.core.css");
-        Asset::getInstance()->addCss($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.theme.css");
-        Asset::getInstance()->addCss($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.selectmenu.css");
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH_DEFAULT . "/js/jquery.ui.selectmenu/jquery.ui.core.css");
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH_DEFAULT . "/js/jquery.ui.selectmenu/jquery.ui.theme.css");
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH_DEFAULT . "/js/jquery.ui.selectmenu/jquery.ui.selectmenu.css");
 
-        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.core.js");
-        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.widget.js");
-        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.position.js");
-        Asset::getInstance()->addJs($pathToDefaultTemplate . "/js/jquery.ui.selectmenu/jquery.ui.selectmenu.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH_DEFAULT . "/js/jquery.ui.selectmenu/jquery.ui.core.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH_DEFAULT . "/js/jquery.ui.selectmenu/jquery.ui.widget.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH_DEFAULT . "/js/jquery.ui.selectmenu/jquery.ui.position.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH_DEFAULT . "/js/jquery.ui.selectmenu/jquery.ui.selectmenu.js");
         ?>
 
 		<!--[if lt IE 9]>
-            <script src=<?=CUtil::GetAdditionalFileURL($pathToDefaultTemplate . '/js/html5shiv.js');?></script>
+            <script src=<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH_DEFAULT . '/js/html5shiv.js');?></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -98,15 +96,7 @@ $pathToDefaultTemplate = '/local/templates/.default'
 							</li>
 							<li><a href="#">Раритетные</a></li>
 							<li><a href="#">Распродажа</a></li>
-							<li><a href="#"><?php
-                                    if(\Bitrix\Main\Loader::includeModule('local.lib')) {
-                                        echo 'ldasdasdasdasdasdasdol';
-                                    }
-                                    if(\Bitrix\Main\Loader::includeModule('local.lib')) {
-                                        echo 'ldasdasdasdasdasdasdol';
-                                    }
-                                    ?></a></li>
-<!--							<li><a href="#">Новинки</a></li>-->
+							<li><a href="#">Новинки</a></li>
 					</ul>
 					</nav>
 				</div>
