@@ -1,6 +1,11 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 IncludeTemplateLangFile(__FILE__);
 ?>
+                </div>
+            </section>
+            <div class="d_footer width_960"></div>
+            <div class="clear"></div>
+        </div>
 		<footer class="footer width_960">
 			<section class="float_inner bottom_block">
 				<section class="shops_block">

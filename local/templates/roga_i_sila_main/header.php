@@ -1,6 +1,9 @@
 <?
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 	die();
+
+use Bitrix\Main\Page\Asset;
+
 IncludeTemplateLangFile(__FILE__);
 ?>
 ﻿<!DOCTYPE html>
@@ -12,7 +15,6 @@ IncludeTemplateLangFile(__FILE__);
 		<title><?$APPLICATION->ShowTitle();?></title>
         <?
         $APPLICATION->ShowHead();
-        use Bitrix\Main\Page\Asset;
 
         Asset::getInstance()->addString('<link href="' . SITE_TEMPLATE_PATH_DEFAULT.'/favicon.ico" rel="shortcut icon" type="image/x-icon" />');
 
@@ -48,7 +50,7 @@ IncludeTemplateLangFile(__FILE__);
 					<div class="inline-block">
 						<span class="logo inline-block"></span>
 					</div>
-					<?$APPLICATION->IncludeComponent(
+                    <div class="inline-block"><?$APPLICATION->IncludeComponent(
                         "bitrix:system.auth.form",
                         "auth_form_header",
                         Array(
@@ -57,8 +59,10 @@ IncludeTemplateLangFile(__FILE__);
                             "REGISTER_URL" => "/auth/",
                             "SHOW_ERRORS" => "Y",
                             "AUTH_CUSTOM_URL" => "/auth/",
-                        )
+                        ),
+                        false
                     );?>
+                    </div>
 					<div class="basket_block inline-block">
 						<a href="#" class="basket_product_count inline-block">0</a>
 						<a href="#" class="order_button pie">Оформить заказ</a>
@@ -104,3 +108,5 @@ IncludeTemplateLangFile(__FILE__);
 					</nav>
 				</div>
 			</section>
+            <section class="content">
+                <div class="work_area width_960">
