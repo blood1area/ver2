@@ -1,12 +1,17 @@
 <?
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+IncludeTemplateLangFile(__FILE__);
+
 return array (
-  "error" => array(
+    "error" => array(
         "tag" => 'span',
-        "title" => 'Сообщение об ошибке', 
-        "html" => '<span class="error">Сообщение об ошибке</span>'),
-  "news_item_date grey" => array(
+        "title" => GetMessage("ERROR_TITLE"),
+        "html" => '<span class="error"><?GetMessage("ERROR_TITLE")?></span>'
+    ),
+
+    "news_item_date grey" => array(
         "tag" => 'p',
-        "title" => 'Дата', 
-        "html" => '<p class="news_item_date">Дата</span>')
+        "title" => GetMessage("DATE_TITLE"),
+        "html" => '<p class="news_item_date"><?GetMessage("DATE_TITLE")?></span>'
+    )
 );
-?>
