@@ -1,10 +1,9 @@
 <?
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+IncludeTemplateLangFile(__FILE__);
 $arTemplate = array (
-  'NAME' => 'Вложенная',
-  'DESCRIPTION' => 'Данный шаблон используется для страниц разделов новости, 
-                    наши салоны, о компании, контактная информация, условия 
-                    продаж, финансовый отдел, для клиентов, авторизация, 
-                    регистрация, восстановление пароля.',
+  'NAME' => GetMessage('T_NAME'),
+  'DESCRIPTION' => GetMessage('T_DESC'),
   'SORT' => '2',
   'TYPE' => '',
 );

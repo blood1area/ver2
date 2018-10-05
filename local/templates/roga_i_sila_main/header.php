@@ -50,7 +50,7 @@ IncludeTemplateLangFile(__FILE__);
 					<div class="inline-block">
 						<span class="logo inline-block"></span>
 					</div>
-                    <div class="inline-block"><?$APPLICATION->IncludeComponent(
+                    <?$APPLICATION->IncludeComponent(
                         "bitrix:system.auth.form",
                         "auth_form_header",
                         Array(
@@ -62,7 +62,6 @@ IncludeTemplateLangFile(__FILE__);
                         ),
                         false
                     );?>
-                    </div>
 					<div class="basket_block inline-block">
 						<a href="#" class="basket_product_count inline-block">0</a>
 						<a href="#" class="order_button pie">Оформить заказ</a>
