@@ -1,36 +1,53 @@
 @font-face {
-    font-family: 'PTSans_Bold';
-    src: url('../.default/fonts/PTSans_Bold.eot');
-    src: local('☺'),
-         url('../.default/fonts/PTSans_Bold.woff') format('woff'),
-         url('../.default/fonts/PTSans_Bold.ttf') format('truetype'),
-         url('../.default/fonts/PTSans_Bold.svg') format('svg');
-    font-weight: bold;
-    font-style: normal;
+	font-family: 'PTSans_Bold';
+	src: url('/local/templates/.default/fonts/PTSans_Bold.eot');
+	src: local('☺'),
+	url('/local/templates/.default/fonts/PTSans_Bold.woff') format('woff'),
+	url('/local/templates/.default/fonts/PTSans_Bold.ttf') format('truetype'),
+	url('/local/templates/.default/fonts/PTSans_Bold.svg') format('svg');
+	font-weight: bold;
+	font-style: normal;
 }
 @font-face {
-    font-family: 'PTSans_Regular';
-    src: url('../.default/fonts/PTSans_Regular.eot');
-    src: local('☺'),
-         url('../.default/fonts/PTSans_Regular.woff') format('woff'),
-         url('../.default/fonts/PTSans_Regular.ttf') format('truetype'),
-         url('../.default/fonts/PTSans_Regular.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'PTSans_Regular';
+	src: url('/local/templates/.default/fonts/PTSans_Regular.eot');
+	src: local('☺'),
+	url('/local/templates/.default/fonts/PTSans_Regular.woff') format('woff'),
+	url('/local/templates/.default/fonts/PTSans_Regular.ttf') format('truetype'),
+	url('/local/templates/.default/fonts/PTSans_Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
-    font-family: 'PTSans_Italic';
-    src: url('../.default/fonts/PTSans_Italic.eot');
-    src: local('☺'),
-         url('../.default/fonts/PTSans_Italic.woff') format('woff'),
-         url('../.default/fonts/PTSans_Italic.ttf') format('truetype'),
-         url('../.default/fonts/PTSans_Italic.svg') format('svg');
-    font-weight: normal;
-    font-style: italic;
+	font-family: 'PTSans_Italic';
+	src: url('/local/templates/.default/fonts/PTSans_Italic.eot');
+	src: local('☺'),
+	url('/local/templates/.default/fonts/PTSans_Italic.woff') format('woff'),
+	url('/local/templates/.default/fonts/PTSans_Italic.ttf') format('truetype'),
+	url('/local/templates/.default/fonts/PTSans_Italic.svg') format('svg');
+	font-weight: normal;
+	font-style: italic;
 }
 
-@import url('/local/templates/.default/css/base.css');
+html, body
+{
+	color: #000;
+	font-family: "PTSans_Regular", Arial, sans-serif;
+	height: 100%;
+}
+body
+{
+	font-size: 14px;
+}
+.wrapper
+{
+	background: url("../.default/images/main_bg.png") 0 0 repeat;
+	font-size: 14px;
+	min-height: 100%;
+	position: relative;
+}
 
+/* */
 body
 {
 	color: #333333;
@@ -96,7 +113,7 @@ figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, t
 }
 .pie
 {
-	behavior: url('../.default/PIE.htc');
+	behavior: url('/local/templates/.default/PIE.htc');
 }
 h1,h2,h3,h4,h5
 {
@@ -164,7 +181,7 @@ ul
 }
 ul li
 {
-	background: url("../.default/images/li_bullit.png") 0 0.428em no-repeat;
+	background: url("/local/templates/.default/images/li_bullit.png") 0 0.428em no-repeat;
 	padding-bottom: 5px;
 	padding-left: 16px;
 }
