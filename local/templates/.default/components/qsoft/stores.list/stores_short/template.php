@@ -34,7 +34,7 @@ use Bitrix\Main\Localization\Loc;
                     <h3 class="shops_block_item_name"><?=$arResult["NAME"]?></h3>
                     <p class="dark_grey"><?=$arResult["PROPERTY_ADDRESS_VALUE"]?></p>
                     <p class="black"><?=$arResult["PROPERTY_PHONE_VALUE"]?></p>
-                    <p><?Loc::getMessage('WORK_HOURS')?><br/><?=$arResult["PROPERTY_WORK_HOURS_VALUE"]?></p>
+                    <p><?=Loc::getMessage('WORK_HOURS')?><br/><?=$arResult["PROPERTY_WORK_HOURS_VALUE"]?></p>
                 </figcaption>
             </figure>
         <?endforeach;?>
