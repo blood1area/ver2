@@ -19,9 +19,6 @@ use Bitrix\Main\Localization\Loc;
     <span class="dark_grey all_list">&nbsp;/&nbsp;<a href="<?=$arResult["DETAIL_PAGE_URL"]?>" class="text_decor_none"><b><?=Loc::GetMessage('IBLOCK_LINK')?></b></a></span>
     <div>
         <?foreach($arResult["SALONS"] as $arResult):
-
-            echo Bitrix\Main\Diag\Debug::dump($arResult);
-
             $this->AddEditAction($arResult['ID'], $arResult['EDIT_LINK'], CIBlock::GetArrayByID($arResult["IBLOCK_ID"], "ELEMENT_EDIT"))	;
             $this->AddDeleteAction($arResult['ID'], $arResult['DELETE_LINK'], CIBlock::GetArrayByID($arResult["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => Loc::GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));?>
             <figure id="<?=$this->GetEditAreaId($arResult['ID']);?>" class="shops_block_item">
