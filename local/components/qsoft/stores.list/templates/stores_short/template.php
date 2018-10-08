@@ -13,10 +13,9 @@
 $frame = $this->createFrame()->begin('');
 use Bitrix\Main\Localization\Loc;
 ?>
-
 <section class="shops_block">
     <h2 class="inline-block"><?=Loc::GetMessage('OUR_STORES')?></h2>
-    <span class="dark_grey all_list">&nbsp;/&nbsp;<a href="<?=$arResult["DETAIL_PAGE_URL"]?>" class="text_decor_none"><b><?=Loc::GetMessage('IBLOCK_LINK')?></b></a></span>
+    <span class="dark_grey all_list">&nbsp;/&nbsp;<a href="<?=$arParams["ALL_SALONS_URL"]?>" class="text_decor_none"><b><?=Loc::GetMessage('IBLOCK_LINK')?></b></a></span>
     <div>
         <?foreach($arResult["SALONS"] as $arResult):
             $this->AddEditAction($arResult['ID'], $arResult['EDIT_LINK'], CIBlock::GetArrayByID($arResult["IBLOCK_ID"], "ELEMENT_EDIT"))	;
@@ -32,9 +31,13 @@ use Bitrix\Main\Localization\Loc;
                 </a>
                 <figcaption class="shops_block_item_description">
                     <h3 class="shops_block_item_name"><?=$arResult["NAME"]?></h3>
-                    <p class="dark_grey"><?=$arResult["PROPERTY_ADDRESS_VALUE"]?></p>
-                    <p class="black"><?=$arResult["PROPERTY_PHONE_VALUE"]?></p>
-                    <p><?=Loc::getMessage('WORK_HOURS')?><br/><?=$arResult["PROPERTY_WORK_HOURS_VALUE"]?></p>
+                    <?if (!empty($arResult["PROPERTY_ADDRESS_VALUE"])):?>
+                        <p class="dark_grey"><?=$arResult["PROPERTY_ADDRESS_VALUE"]?></p>
+                    <?endif;if (!empty($arResult["PROPERTY_PHONE_VALUE"])):?>
+                        <p class="black"><?=$arResult["PROPERTY_PHONE_VALUE"]?></p>
+                    <?endif;if (!empty($arResult["PROPERTY_WORK_HOURS_VALUE"])):?>
+                        <p><?=Loc::getMessage('WORK_HOURS')?><br/><?=$arResult["PROPERTY_WORK_HOURS_VALUE"]?></p>
+                    <?endif;?>
                 </figcaption>
             </figure>
         <?endforeach;?>
