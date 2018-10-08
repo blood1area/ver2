@@ -39,30 +39,12 @@ $arComponentParameters = array(
             "PARENT" => "BASE",
             "NAME" => GetMessage("IBLOCK_AMOUNT_ELEMENTS"),
 			"DEFAULT" => 2
-//            "TYPE" => "LIST",
-//            "VALUES" => $arIBlock,
-//            "MULTIPLE"=>"Y",
-//            "REFRESH" => "Y",
         ),
-//		"PARENT_SECTION" => array(
-//			"PARENT" => "ADDITIONAL_SETTINGS",
-//			"NAME" => GetMessage("IBLOCK_SECTION_ID"),
-//			"TYPE" => "STRING",
-//			"DEFAULT" => '',
-//		),
 		"CACHE_TIME"  =>  Array("DEFAULT"=>3600),
-//		"CACHE_GROUPS" => array(
-//			"PARENT" => "CACHE_SETTINGS",
-//			"NAME" => GetMessage("CP_BPR_CACHE_GROUPS"),
-//			"TYPE" => "CHECKBOX",
-//			"DEFAULT" => "Y",
-//		),
         "DETAIL_URL" => CIBlockParameters::GetPathTemplateParam(
             "DETAIL",
             "DETAIL_URL",
-            GetMessage("IBLOCK_DETAIL_URL"),
-            "",
-            ""//"URL_TEMPLATES"
+            GetMessage("IBLOCK_DETAIL_URL")
         ),
 
 		"SHOW_MAP" => Array(

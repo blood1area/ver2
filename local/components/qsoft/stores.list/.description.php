@@ -4,11 +4,11 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 $arComponentDescription = array(
 	"NAME" => GetMessage("T_IBLOCK_NAME"),
 	"DESCRIPTION" => GetMessage("T_IBLOCK_DESC"),
-	"ICON" => "/images/photo_view.gif",
 	"CACHE_PATH" => "Y",
-	"SORT" => 40,
+	"SORT" => 555,
 	"PATH" => array(
-		"ID" => "content",
+		"ID" => "qsoft",
+		"NAME" => GetMessage("T_IBLOCK_NAME_SECTION"),
 		"CHILD" => array(
 			"ID" => "stores",
 			"NAME" => GetMessage("T_IBLOCK_DESC_SECTION"),

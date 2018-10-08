@@ -4,19 +4,17 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 use \Bitrix\Main\Loader;
 use \Bitrix\Main\Localization\Loc;
 
-use \Bitrix\Main\Diag\Debug;
-
-
 if(!isset($arParams["CACHE_TIME"])) {
     $arParams["CACHE_TIME"] = 3600;
 }
 
+$arParams["AMOUNT_ELEMENTS"] = intval($arParams["AMOUNT_ELEMENTS"]);
 if($arParams["AMOUNT_ELEMENTS"] <= 0) {
     $arParams["AMOUNT_ELEMENTS"] = 2;
 }
 
 if ($arParams['IBLOCK_ID'] <= 0) {
-    ShowError(\Bitrix\Main\Localization\Loc::GetMessage('NO_IB'));
+    ShowError(Loc::GetMessage('NO_IB'));
     return;
 }
 
@@ -56,7 +54,7 @@ if($this->StartResultCache(false))
 		['nPageSize' => $arParams["AMOUNT_ELEMENTS"]],
 		$arSelect);
 
-	$rsIBlockElement->SetUrlTemplates();
+$rsIBlockElement->SetUrlTemplates($arParams["DETAIL_URL"]);
 
 	while ($item = $rsIBlockElement->GetNext()){
 
@@ -76,21 +74,11 @@ if($this->StartResultCache(false))
             Bitrix\Iblock\Component\Tools::IPROPERTY_ENTITY_ELEMENT,
             'IPROPERTY_VALUES'
         );
-        $arResult["TEST"][] = $item;
+        $arResult["SALONS"][] = $item;
 	}
 
-    $this->SetResultCacheKeys(array());
+    $this->SetResultCacheKeys(array('SALONS'));
     $this->IncludeComponentTemplate();
-
-
-//	if($arResult = $rsIBlockElement->GetNext())
-//	{
-//
-//	}
-//	else
-//	{
-//		$this->AbortResultCache();
-//	}
 }
 
 $arButtons = CIBlock::GetPanelButtons(
