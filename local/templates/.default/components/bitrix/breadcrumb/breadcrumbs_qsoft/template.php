@@ -1,6 +1,9 @@
 <?php
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
+if(empty($arResult))
+    return "";
+
 $strReturn = '<nav class="nav_chain">';
     for ($i = 0;$i < count($arResult)-1; $i++){
         $item = $arResult[$i];
