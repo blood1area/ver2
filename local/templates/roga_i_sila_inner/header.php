@@ -136,6 +136,6 @@ IncludeTemplateLangFile(__FILE__);
 								</ul>
 							</nav>
 						</aside>
-						<h1><?$APPLICATION->ShowTitle(FALSE)?></h1>
+						<h1><?$APPLICATION->ShowTitle()?></h1>
 						
 					

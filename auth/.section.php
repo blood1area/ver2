@@ -1,12 +1,13 @@
 <?
+use Bitrix\Main\Localization\Loc;
+
 if($_REQUEST["register"]=="yes"){
-    $sSectionName = "Регистрация";
+    $sSectionName = Loc::getMessage('REGISTER_TITLE');
 }else if($_REQUEST["forgot_password"]=="yes"){
-    $sSectionName = "Восстановление пароля";
+    $sSectionName = Loc::getMessage('FORGOT_PASS_TITLE');
 }else{
-    $sSectionName = "Авторизация";
+    $sSectionName = Loc::getMessage('AUTH_TITLE');
 }
 $arDirProperties = array(
 
 );
-?>
