@@ -7,22 +7,17 @@ IncludeTemplateLangFile(__FILE__);
             <div class="clear"></div>
         </div>
 		<footer class="footer width_960">
-
             <section class="float_inner bottom_block">
                 <?$APPLICATION->IncludeComponent(
                     "qsoft:stores.list",
                     "stores_short",
                     Array(
+                        "ALL_SALONS_URL" => "/company/stores/",
                         "AMOUNT_ELEMENTS" => "2",
-                        "CACHE_GROUPS" => "Y",
                         "CACHE_TIME" => "3600",
                         "CACHE_TYPE" => "A",
-                        "COMPONENT_TEMPLATE" => "stores_short",
-                        "DETAIL_URL" => "/company/stores/",
-                        "IBLOCKS" => "13",
                         "IBLOCK_ID" => "13",
                         "IBLOCK_TYPE" => "stores",
-                        "PARENT_SECTION" => "",
                         "SHOW_MAP" => "N",
                         "SORT_PROP" => "RAND",
                         "SORT_TYPE" => "DESC"
