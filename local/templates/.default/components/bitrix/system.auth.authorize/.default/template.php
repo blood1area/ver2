@@ -30,7 +30,7 @@ ShowMessage($arResult['ERROR_MESSAGE']);
 			</tr>
 			<tr>
 				<td class="bx-auth-label"><?=Loc::getMessage("AUTH_PASSWORD")?></td>
-				<td><input c    lass="bx-auth-input" type="password" name="USER_PASSWORD" maxlength="255" autocomplete="off" />
+				<td><input c    lass="bx-auth-input" type="password" name="USER_PASSWORD" maxlength="255" autocomplete="off" placeholder="<?=PASSWORD_PLACEHOLDER?>"/>
 				</td>
 			</tr>
 			<?if($arResult["CAPTCHA_CODE"]):?>
