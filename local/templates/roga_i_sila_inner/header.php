@@ -124,14 +124,23 @@ IncludeTemplateLangFile(__FILE__);
 							<nav>
 								<ul class="left_menu">
 									<li>
-										<span>Информация</span>
-										<ul>
-											<li><a href="#">О компнаии</a></li>
-											<li><a href="#">Контактная информация</a></li>
-											<li><a href="#">Условия продаж</a></li>
-											<li><a href="#">Финансовый отдел</a></li>
-											<li><a href="#">Для клиентов</a></li>
-										</ul>
+										<span><?=Bitrix\Main\Localization\Loc::getMessage('MENU_TITLE')?></span>
+                                        <?$APPLICATION->IncludeComponent(
+                                            "bitrix:menu",
+                                            "menu_footer",
+                                            Array(
+                                                "ALLOW_MULTI_SELECT" => "N",
+                                                "CHILD_MENU_TYPE" => "",
+                                                "DELAY" => "N",
+                                                "MAX_LEVEL" => "1",
+                                                "MENU_CACHE_GET_VARS" => array(""),
+                                                "MENU_CACHE_TIME" => "3600",
+                                                "MENU_CACHE_TYPE" => "N",
+                                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                                "ROOT_MENU_TYPE" => "bottom",
+                                                "USE_EXT" => "N"
+                                            )
+                                        );?>
 									</li>
 								</ul>
 							</nav>
