@@ -25,22 +25,27 @@ IncludeTemplateLangFile(__FILE__);
                         "SORT_TYPE" => "DESC"
                     )
                 );?>
-                <?$APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "menu_footer",
-                    Array(
-                        "ALLOW_MULTI_SELECT" => "N",
-                        "CHILD_MENU_TYPE" => "",
-                        "DELAY" => "N",
-                        "MAX_LEVEL" => "1",
-                        "MENU_CACHE_GET_VARS" => array(""),
-                        "MENU_CACHE_TIME" => "3600",
-                        "MENU_CACHE_TYPE" => "N",
-                        "MENU_CACHE_USE_GROUPS" => "Y",
-                        "ROOT_MENU_TYPE" => "bottom",
-                        "USE_EXT" => "N"
-                    )
-                );?><br>
+                <section class="info_block left_block_shadow">
+                    <h2><?=Bitrix\Main\Localization\Loc::getMessage('MENU_TITLE')?></h2>
+                    <nav class="grey">
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:menu",
+                            "menu_footer",
+                            Array(
+                                "ALLOW_MULTI_SELECT" => "N",
+                                "CHILD_MENU_TYPE" => "",
+                                "DELAY" => "N",
+                                "MAX_LEVEL" => "1",
+                                "MENU_CACHE_GET_VARS" => array(""),
+                                "MENU_CACHE_TIME" => "3600",
+                                "MENU_CACHE_TYPE" => "N",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "ROOT_MENU_TYPE" => "bottom",
+                                "USE_EXT" => "N"
+                            )
+                        );?>
+                    </nav>
+                </section>
 			</section>
 			<div class="footer_inner">
 				<a href="http://www.qsoft.ru" target="_blank" class="qsoft grey inline-block">Сделано в</a>

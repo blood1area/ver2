@@ -252,6 +252,8 @@
 /*x_search_form*/
 
 /*main_menu*/
+
+
 .main_menu
 {
 	font-size: 0;
@@ -569,33 +571,17 @@
 /*x_shops_block*/
 
 /*info_block*/
-
+.info_block
+{
+	float: left;
+	margin-left: 15px;
+	margin-top: 12px;
+	padding-left: 20px;
+}
 /*x_info_block*/
 
 /*nav_chain*/
-.nav_chain
-{
-	background-color: #f9f9f9;
-	color: #000;
-	font-size: 12px;
-	padding: 2px 0 6px 20px;
-}
-.nav_chain *
-{
-	vertical-align: middle;
-}
-.nav_chain a
-{
-	color: black;
-	text-decoration: none;
-}
-.nav_arrow
-{
-	background: url("../images/sprite.png") -35px -50px no-repeat;
-	height: 5px;
-	margin: 1px 7px 0;
-	width: 4px;
-}
+
 /*x_nav_chain*/
 
 /*forms*/
