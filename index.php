@@ -5,35 +5,17 @@ $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 $APPLICATION->SetTitle("Главная");
 ?>
 <div class="slider">
-    <ul class="bxslider">
-        <li>
-            <div class="banner">
-                <img src="local/templates/.default/images/test_slider_1.png" alt="" title="" />
-                <div class="banner_content">
-                    <h1>Купи Роллс Ройс, получи Отчество к своему имени</h1>
-                    <h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире <a href="#1" class="detail_link">подробнее</a></h2>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="banner">
-                <img src="local/templates/.default/images/test_slider_2.png" alt="" title="" />
-                <div class="banner_content">
-                    <h1>Купи Астон Мартин, получи секретное Задание</h1>
-                    <h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире <a href="#2" class="detail_link">подробнее</a></h2>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="banner">
-                <img src="local/templates/.default/images/test_slider_3.png" alt="" title="" />
-                <div class="banner_content">
-                    <h1>Купи Бентли, получи бейсболку</h1>
-                    <h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире <a href="#3" class="detail_link">подробнее</a></h2>
-                </div>
-            </div>
-        </li>
-    </ul>
+    <?$APPLICATION->IncludeComponent(
+        "qsoft:main.banner",
+        "",
+        Array(
+            "CACHE_TIME" => "0",
+            "CACHE_TYPE" => "A",
+            "NOINDEX" => "N",
+            "QUANTITY" => "3",
+            "TYPE" => "slider_header"
+        )
+    );?>
 </div>
 <h2 class="push_right">Модели недели</h2>
 <section class="product_line">
