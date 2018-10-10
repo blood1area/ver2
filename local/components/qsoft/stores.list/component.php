@@ -78,7 +78,7 @@ if($this->StartResultCache(false))
 		$arSelect
     );
 
-    $rsIBlockElement->SetUrlTemplates($arParams["DETAIL_URL"]);
+    $rsIBlockElement->SetUrlTemplates();
 
 	while ($item = $rsIBlockElement->GetNext()) {
             $arButtons = CIBlock::GetPanelButtons(
