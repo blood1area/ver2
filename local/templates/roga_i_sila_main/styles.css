@@ -107,7 +107,7 @@ figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, t
 	height: 0;
 	width: 100%;
 }
-.inverse, .inverse h2, .inverse a, a.inverse:visited
+.inverse, .inverse h2, .inverse h3, .inverse a, a.inverse:visited
 {
 	color: #fff;
 }
@@ -126,7 +126,9 @@ h1
 	margin-bottom: 0.4em;
 	margin-top: 0.5em;
 }
+.banner h1{
 
+}
 h2
 {
 	font-size: 1.714em;
