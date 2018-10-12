@@ -49,7 +49,7 @@ IncludeTemplateLangFile(__FILE__);
 			</section>
 			<div class="footer_inner">
 				<a href="http://www.qsoft.ru" target="_blank" class="qsoft grey inline-block">Сделано в</a>
-				<div class="copy">&copy; 2013 Рога &amp; Сила. Продажа автомобилей.</div>
+				<div class="copy"><?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH_DEFAULT.'/include_areas/copyright.php')?></div>
 			</div>
 		</footer>
 	</body>
