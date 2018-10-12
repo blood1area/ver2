@@ -7,7 +7,7 @@ $arrayWords = array(
     'EMAIL' => ['mail'],
     'CAPTCHA' => ['код' ,'code']
 );
-$errorMsg =  Bitrix\Main\Localization\Loc::getMessage('ERROR');
+$result = array();
 
 if(!empty($arResult["ERROR_MESSAGE"])) {
     foreach ($arResult["ERROR_MESSAGE"] as $v) {
@@ -15,13 +15,14 @@ if(!empty($arResult["ERROR_MESSAGE"])) {
 
             foreach ($matchWords as $word) {
                 if (stripos($v, $word)) {
-                    $arResult["ERROR_MESSAGE_MARKER"][$key] = true;
+                    $result[$key] = $v;
                     break;
                 }
             }
         }
     }
+    $arResult['ERROR_MESSAGE'] = $result;
 }
 
-unset($matchWords);
-unset($errorMsg);
+unset($arrayWords);
+unset($result);
