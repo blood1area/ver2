@@ -65,18 +65,18 @@ $arComponentParameters = array(
 			"DEFAULT" => "N"
 		),
 
-		"SORT_PROP" => Array(
-			"NAME" => GetMessage("SORT_PROP"),
-			"TYPE" => 'LIST',
-			"VALUES" => $arSortFields,
-			"DEFAULT" => "RAND"
-		),
-
 		"SORT_TYPE" => Array(
             "NAME" => GetMessage("SORT_TYPE"),
             "TYPE" => 'LIST',
             "VALUES" => $arSorts,
 			"DEFAULT" => "DESC"
+		),
+
+		"SORT_PROP" => Array(
+			"NAME" => GetMessage("SORT_PROP"),
+			"TYPE" => 'LIST',
+			"VALUES" => $arSortFields,
+			"DEFAULT" => "RAND"
 		)
 	)
 );

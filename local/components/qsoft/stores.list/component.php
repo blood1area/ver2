@@ -59,7 +59,14 @@ if($this->StartResultCache(false))
 		"PROPERTY_PHONE",
 		"PROPERTY_WORK_HOURS"
 	);
-	//WHERE
+
+    if ($arParams['SHOW_MAP'] == 'Y') {
+        array_push($arSelect, 'PROPERTY_MAP');
+    }
+
+    $nPageSize['nPageSize'] = ($arParams['SHOW_MAP'] == 'Y') ? false : $arParams['AMOUNT_ELEMENTS'];
+
+    //WHERE
 	$arFilter = array(
         "IBLOCK_ID"=>$arParams["IBLOCK_ID"],
         "ACTIVE"=>"Y"
@@ -69,18 +76,20 @@ if($this->StartResultCache(false))
 	$arSort = array(
 		$arParams["SORT_PROP"]=>$arParams["SORT_TYPE"]
 	);
+
 	//EXECUTE
 	$rsIBlockElement = CIBlockElement::GetList(
 		$arSort,
 		$arFilter,
 		false,
-		['nPageSize' => $arParams["AMOUNT_ELEMENTS"]],
+        $nPageSize,
 		$arSelect
     );
 
     $rsIBlockElement->SetUrlTemplates();
 
 	while ($item = $rsIBlockElement->GetNext()) {
+
             $arButtons = CIBlock::GetPanelButtons(
             $item['IBLOCK_ID'],
             $item['ID'],
@@ -103,6 +112,21 @@ if($this->StartResultCache(false))
         }
         $arResult["SALONS"][] = $item;
 	}
+//    $arMap = [];
+//    foreach ($salons as $salon => $value) {
+//        if (!empty($value['PROPERTY_MAP_VALUE'])) {
+//            list($LAT, $LON) = explode(',', $value['PROPERTY_MAP_VALUE']);
+//            $arMap['PLACEMARKS'][] = [
+//                'TITLE' => $value['NAME'],
+//                'TEXT' => $value['PROPERTY_ADDRESS_VALUE'],
+//                'LON' => $LON,
+//                'LAT' => $LAT
+//            ];
+//        }
+//    }
+//    $arMap['yandex_lat'] = 55.7537;
+//    $arMap['yandex_lon'] = 37.6198;
+//    return serialize($arMap);
     $this->IncludeComponentTemplate();
 }
 
