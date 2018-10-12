@@ -1,0 +1,24 @@
+<?
+$aMenuLinks = Array(
+    Array(
+        "Легковые",
+        "/catalog/passenger/"
+    ),
+    Array(
+        "Внедорожники",
+        "/catalog/suv/"
+    ),
+    Array(
+        "Раритетные",
+        "/catalog/rare/"
+    ),
+    Array(
+        "Распродажа",
+        "/catalog/sale/"
+    ),
+    Array(
+        "Новинки",
+        "/catalog/new/"
+    ),
+);
+?>
