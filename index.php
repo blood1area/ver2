@@ -6,16 +6,18 @@ $APPLICATION->SetTitle("Главная");
 ?>
 <div class="slider">
     <?$APPLICATION->IncludeComponent(
-        "qsoft:main.banner",
-        "",
-        Array(
-            "CACHE_TIME" => "0",
-            "CACHE_TYPE" => "A",
-            "NOINDEX" => "N",
-            "QUANTITY" => "3",
-            "TYPE" => "slider_header"
-        )
-    );?>
+	"qsoft:main.banner", 
+	".default", 
+	array(
+		"CACHE_TIME" => "0",
+		"CACHE_TYPE" => "A",
+		"NOINDEX" => "N",
+		"QUANTITY" => "3",
+		"TYPE" => "slider_header",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);?>
 </div>
 <h2 class="push_right">Модели недели</h2>
 <section class="product_line">

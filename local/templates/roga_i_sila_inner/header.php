@@ -3,8 +3,9 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 	die();
 
 use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Localization\Loc;
 
-IncludeTemplateLangFile(__FILE__);
+Loc::loadMessages(__FILE__);
 ?>
 <!DOCTYPE html>
 <!--[if IE 7]>    <html class="ie7"> <![endif]-->
@@ -38,7 +39,10 @@ IncludeTemplateLangFile(__FILE__);
         ?>
 
 		<!--[if lt IE 9]>
-        <script src=<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH_DEFAULT.'/js/html5shiv.js');?></script>
+            <script
+                src="
+                    <?echo CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH_DEFAULT. '/js/html5shiv.js');?>
+                    "></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -74,7 +78,6 @@ IncludeTemplateLangFile(__FILE__);
                         "bitrix:search.form",
                         "search_form_header",
                         array(
-                            "COMPONENT_TEMPLATE" => "search_form_header",
                             "PAGE" => "/search/",
                             "USE_SUGGEST" => "N"
                         )
@@ -85,7 +88,6 @@ IncludeTemplateLangFile(__FILE__);
                         Array(
                             "ALLOW_MULTI_SELECT" => "N",
                             "CHILD_MENU_TYPE" => "subTop",
-                            "COMPONENT_TEMPLATE" => "catalog_top",
                             "DELAY" => "N",
                             "MAX_LEVEL" => "2",
                             "MENU_CACHE_GET_VARS" => array(),
@@ -96,33 +98,6 @@ IncludeTemplateLangFile(__FILE__);
                             "USE_EXT" => "Y"
                         )
                     );?>
-<!--					<nav class="main_menu">-->
-<!--						<ul>-->
-<!--							<li class="submenu pie">-->
-<!--								<span>Легковые</span>-->
-<!--								<div class="submenu_border"></div>-->
-<!--								<ul>-->
-<!--									<li><a href="#">Седаны</a></li>-->
-<!--									<li><a href="#">Хетчбеки</a></li>-->
-<!--									<li><a href="#">Универсалы</a></li>-->
-<!--									<li><a href="#">Купе</a></li>-->
-<!--									<li><a href="#">Родстеры</a></li>-->
-<!--								</ul>-->
-<!--							</li>-->
-<!--							<li class="submenu pie">-->
-<!--								<span>Внедорожники</span>-->
-<!--								<div class="submenu_border"></div>-->
-<!--								<ul>-->
-<!--									<li><a href="#">Рамные</a></li>-->
-<!--									<li><a href="#">Пикапы</a></li>-->
-<!--									<li><a href="#">Кроссоверы</a></li>-->
-<!--								</ul>-->
-<!--							</li>-->
-<!--							<li><a href="#">Раритетные</a></li>-->
-<!--							<li><a href="#">Распродажа</a></li>-->
-<!--							<li><a href="#">Новинки</a></li>-->
-<!--					</ul>-->
-<!--					</nav>-->
 				</div>
 			</section>
 			<section class="content">

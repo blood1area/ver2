@@ -42,4 +42,4 @@
         endif;
         ?>
     </nav>
-<?endif?>
+<?endif;

@@ -40,25 +40,3 @@ $arComponentParameters = array(
         "CACHE_TIME" => Array("DEFAULT"=>"0"),
     )
 );
-
-if ($templateProperties['NEED_TEMPLATE'] == 'Y')
-{
-    $templates = array('-' => GetMessage("ADV_NOT_SELECTED"));
-    $arTemplates = CComponentUtil::GetTemplatesList('bitrix:advertising.banner.view');
-    if (is_array($arTemplates) && !empty($arTemplates))
-    {
-        foreach ($arTemplates as $template)
-            $templates[$template['NAME']] = $template['NAME'];
-    }
-
-    $arComponentParameters['PARAMETERS']['DEFAULT_TEMPLATE'] = array(
-        "NAME" => GetMessage("ADV_DEFAULT_TEMPLATE"),
-        "PARENT" => "BASE",
-        "TYPE" => "LIST",
-        "VALUES" => $templates,
-        "DEFAULT" => '',
-        "ADDITIONAL_VALUES" => "N"
-    );
-
-    unset($templateProperties['NEED_TEMPLATE']);
-}

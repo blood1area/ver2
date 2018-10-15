@@ -227,7 +227,7 @@ body
 /*x_basket_block*/
 
 /*search_form*/
-.search_form
+/*.search_form
 {
 	background-color: #f2f2f2;
 	khtml-border-radius: 10px;
@@ -264,10 +264,10 @@ body
 .search_form input[type="submit"]:hover
 {
 	background-position: -35px 0px;
-}
+}*/
 /*x_search_form*/
 
-/*main_menu*/
+/*main_menu*//*
 .main_menu
 {
 	font-size: 0;
@@ -359,7 +359,7 @@ body
 {
 	background: #F2F2F2;
 	/*border-bottom: 1px solid white;*/
-	bottom: -2px;
+	/*bottom: -2px;
 	display: none;
 	height: 5px;
 	left: 0;
@@ -395,7 +395,7 @@ body
 }
 .main_menu .current > span{
 		color: #FF7519;
-}	
+}	*/
 /*x_main_menu*/
 
 
@@ -595,7 +595,7 @@ body
 /*x_info_block*/
 
 /*nav_chain*/
-	.nav_chain
+/*	.nav_chain
 {
 	background-color: #f9f9f9;
 	color: #000;
@@ -617,7 +617,7 @@ body
 	height: 5px;
 	margin: 1px 7px 0;
 	width: 4px;
-}
+}*/
 /*x_nav_chain*/
 
 /*forms*/
@@ -798,44 +798,3 @@ nav a
 	top: -4px;
 	zoom: 1;
 }
-/*banners*/
-.banner{
-	position: relative;
-}
-.banner_content{
-	left: 46px;
-	position: absolute;
-	top: 37px;
-}
-.banner h1{
-	color: #fff;
-	font-size: 3.428em;
-	font-weight: normal;
-	line-height: 1.27em;
-	margin-bottom: 0.29em;
-	margin-top: 0;
-	text-transform: uppercase;
-}
-.banner h2{
-	color: #fff;
-	font-size: 1.286em;
-	font-weight: normal;
-	width: 75%;
-}
-.detail_link{
-	color: #ff7519;
-	text-decoration: none;
-	position: relative;
-	z-index: expression(runtimeStyle.zIndex = 1, this.innerHTML = this.innerHTML + "<span class='detail_link_arrow_ie7'></span>");
-}
-.detail_link:after, .detail_link_arrow_ie7 {
-	background: url("../images/sprite.png") 0 -169px no-repeat;
-	content: "";
-	display:inline-block;
-	height: 8px;
-	margin-left: 5px;
-	vertical-align: middle;
-	width: 5px;
-	zoom: 1;
-}
-/*x_banners*/

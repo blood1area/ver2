@@ -1,0 +1,128 @@
+.main_menu{
+    font-size: 0;
+}
+
+.main_menu ul, .main_menu li
+{
+    background: none;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+.main_menu li
+{
+    cursor: default;
+    display: inline-block;
+    font-family: "PTSans_Bold";
+    font-size: 16px;
+    margin-right: 2px;
+    padding: 14px 27px 12px 12px;
+    position: relative;
+    zoom: 1;
+}
+.ie7 .main_menu li
+{
+    display: inline;
+}
+.main_menu li.submenu span
+{
+    position: relative;
+    z-index: expression(runtimeStyle.zIndex = 1, this.innerHTML = this.innerHTML +"<div class='main_menu_submenu_ie7'></div>");
+}
+.main_menu li.submenu.current span
+{
+    position: relative;
+    z-index: expression(runtimeStyle.zIndex = 1, this.innerHTML = this.innerHTML +"<div class='main_menu_current_dsubmenu_ie7'></div>");
+}
+.main_menu li.submenu > span:before, .main_menu_submenu_ie7
+{
+    background: url("/local/templates/.default/images/sprite.png") 0 -50px no-repeat;
+    content: "";
+    height: 5px;
+    position: absolute;
+    right: -1em;
+    top: 0.55em;
+    width: 8px;
+}
+.main_menu li.submenu.current > span:before, .main_menu_current_submenu_ie7
+{
+    background: url("/local/templates/.default/images/sprite.png") -35px -169px no-repeat;
+    content: "";
+    height: 5px;
+    position: absolute;
+    right: -1em;
+    top: 0.55em;
+    width: 8px;
+}
+
+.main_menu li.submenu:hover
+{
+    background-color: #f2f2f2;
+    border: 1px solid #e6e6e6;
+    border-top: 0 none;
+    moz-box-shadow: 0 2px 5px #ccc;
+    webkit-box-shadow: 0 2px 5px #ccc;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 14px 26px 11px 11px;
+}
+.main_menu a
+{
+    color: #000;
+    text-decoration: none;
+}
+.main_menu ul ul
+{
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    moz-box-shadow: 0 0 5px #ccc;
+    webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    display: none;
+    left: -1px;
+    padding: 0px 0 0px;
+    position: absolute;
+    top: 100%;
+    width: 208px;
+    z-index: 2;
+}
+.main_menu li.submenu .submenu_border
+{
+    background: #F2F2F2;
+    /*border-bottom: 1px solid white;*/
+    bottom: -2px;
+    display: none;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 4;
+}
+.main_menu ul li:hover ul, .main_menu ul li:hover .submenu_border
+{
+    display: block;
+}
+.ie7 .main_menu ul ul li
+{
+    display: block;
+}
+.main_menu ul ul li, .main_menu ul ul a, .main_menu ul ul span
+{
+    display: block;
+    padding: 5px 15px;
+}
+.main_menu ul ul li
+{
+    box-shadow: none;
+    font-family: "PTSans_Regular";
+    font-size: 0.875em;
+    margin: 0;
+    padding: 0px 0 0;
+}
+.main_menu ul ul a:hover
+{
+    background-color: #f2f2f2;
+    color: #000;
+}
+.main_menu .current > span{
+    color: #FF7519;
+}
