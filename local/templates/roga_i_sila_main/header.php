@@ -52,18 +52,19 @@ Loc::loadMessages(__FILE__);
                 <span class="logo inline-block"></span>
             </div>
             <?$APPLICATION->IncludeComponent(
-                "bitrix:system.auth.form",
-                "auth_form_header",
-                array(
-                    "FORGOT_PASSWORD_URL" => "",
-                    "PROFILE_URL" => "/personal/",
-                    "REGISTER_URL" => "/auth/",
-                    "SHOW_ERRORS" => "Y",
-                    "AUTH_CUSTOM_URL" => "/auth/",
-                    "COMPONENT_TEMPLATE" => "auth_form_header"
-                ),
-                false
-            );?>
+	"bitrix:system.auth.form", 
+	"auth_form_header", 
+	array(
+		"FORGOT_PASSWORD_URL" => "",
+		"PROFILE_URL" => "/personal/profile/",
+		"REGISTER_URL" => "/auth/",
+		"SHOW_ERRORS" => "Y",
+		"AUTH_CUSTOM_URL" => "/auth/",
+		"COMPONENT_TEMPLATE" => "auth_form_header",
+		"PERSONAL_AREA_URL" => "/personal/"
+	),
+	false
+);?>
             <div class="basket_block inline-block">
                 <a href="#" class="basket_product_count inline-block">0</a>
                 <a href="#" class="order_button pie">Оформить заказ</a>

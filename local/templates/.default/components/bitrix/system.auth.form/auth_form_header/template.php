@@ -14,8 +14,8 @@ if($arResult["FORM_TYPE"] == "login"):?>
 else:?>
     <nav class="top_menu grey inline-block authorize">
         <span><?=GetMessage("ACCOST")?></span>
-        <a href="<?=$arParams["PROFILE_URL"]?>profile/"><b class="user_name"><?=($arResult["USER_NAME"]?$arResult["USER_NAME"]:$arResult["USER_LOGIN"])?></b></a>
-        <a href="<?=$arResult["PROFILE_URL"]?>"><?=GetMessage("AUTH_PROFILE")?></a>
+        <a href="<?=$arParams["PROFILE_URL"]?>"><b class="user_name"><?=($arResult["USER_NAME"]?$arResult["USER_NAME"]:$arResult["USER_LOGIN"])?></b></a>
+        <a href="<?=$arParams["PERSONAL_AREA_URL"]?>"><?=GetMessage("AUTH_PROFILE")?></a>
         <a class="logout" href="
             <?=$APPLICATION->GetCurPageParam(
                 "logout=yes",

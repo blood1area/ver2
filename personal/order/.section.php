@@ -1,5 +1,5 @@
 <?
-$sSectionName = "Посмотреть историю заказов";
+$sSectionName = "Заказы";
 $arDirProperties = array(
 
 );
