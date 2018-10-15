@@ -18,3 +18,5 @@ $MESS["T_IBLOCK_DESC_FSORT"] = "[SORT] Сортировка";
 $MESS["T_IBLOCK_DESC_FTSAMP"] = "[TIMESTAMP_X] Дата последнего изменения";
 $MESS["T_IBLOCK_DESC_FRAND"] = "[RAND] Случайный порядок";
 $MESS["SORT_BY_TITLE"] = "Поле для сортировки салонов";
+
+$MESS['IBLOCK_ERROR'] = "Модуль инфоблока не загрузился";

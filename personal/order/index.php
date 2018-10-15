@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Посмотреть историю заказов");
+$APPLICATION->SetTitle("Мои заказы");
 ?><?$APPLICATION->IncludeComponent("bitrix:sale.personal.order", ".default", Array(
 	"SEF_MODE"	=>	"N",
 	"ORDERS_PER_PAGE"	=>	"20",
