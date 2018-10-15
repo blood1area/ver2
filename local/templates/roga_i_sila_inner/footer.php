@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-IncludeTemplateLangFile(__FILE__);
+use Bitrix\Main\Localization\Loc;
 ?>
 					</section>
 					<hr class="bottom_line"/>
@@ -48,7 +48,7 @@ IncludeTemplateLangFile(__FILE__);
                 </section>
 			</section>
 			<div class="footer_inner">
-				<a href="http://www.qsoft.ru" target="_blank" class="qsoft grey inline-block">Сделано в</a>
+				<a href="http://www.qsoft.ru" target="_blank" class="qsoft grey inline-block"><?echo Loc::getMessage('CREATE_BY')?></a>
 				<div class="copy"><?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH_DEFAULT.'/include_areas/copyright.php')?></div>
 			</div>
 		</footer>

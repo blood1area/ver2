@@ -13,15 +13,48 @@
 $frame = $this->createFrame()->begin('');
 use Bitrix\Main\Localization\Loc;
 ?>
-<section class="shops_block">
+<?
+$this->AddEditAction(
+    "addElement",
+    $arResult['ADD_LINK'],
+    CIBlock::GetArrayByID(
+        $arParams["IBLOCK_ID"],
+        "ELEMENT_ADD"
+    ),
+    Array(
+        "ICON" => "bx-context-toolbar-create-icon",
+    )
+);
+?>
+
+<section id='<?echo $this->GetEditAreaId('addElement');?>' class="shops_block">
     <h2 class="inline-block"><?=Loc::GetMessage('OUR_STORES')?></h2>
     <span class="dark_grey all_list">&nbsp;/&nbsp;<a href="<?=$arParams["ALL_SALONS_URL"]?>" class="text_decor_none"><b><?=Loc::GetMessage('IBLOCK_LINK')?></b></a></span>
     <div>
-        <?foreach($arResult["STORES"] as $arResult):
-            $this->AddEditAction($arResult['ID'], $arResult['EDIT_LINK'], CIBlock::GetArrayByID($arResult["IBLOCK_ID"], "ELEMENT_EDIT"))	;
-            $this->AddDeleteAction($arResult['ID'], $arResult['DELETE_LINK'], CIBlock::GetArrayByID($arResult["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => Loc::GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));?>
+        <?foreach($arResult["STORES"] as $arResult):?>
+
+            <?
+                $this->AddEditAction(
+                    $arResult['ID'],
+                    $arResult['EDIT_LINK'],
+                    CIBlock::GetArrayByID(
+                        $arResult["IBLOCK_ID"],
+                        "ELEMENT_EDIT"
+                    )
+                )	;
+                $this->AddDeleteAction(
+                    $arResult['ID'],
+                    $arResult['DELETE_LINK'],
+                    CIBlock::GetArrayByID(
+                        $arResult["IBLOCK_ID"],
+                        "ELEMENT_DELETE"
+                    ),
+                    array("CONFIRM" => Loc::GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM'))
+                );
+            ?>
+
             <figure id="<?=$this->GetEditAreaId($arResult['ID']);?>" class="shops_block_item">
-                <a href="">
+                <a href="<?=$arParams["ALL_SALONS_URL"]?>">
                     <img    src="<?=$arResult["PREVIEW_PICTURE"]['SRC']?>"
                             width="<?=$arResult["PREVIEW_PICTURE"]["WIDTH"]?>"
                             height="<?=$arResult["PREVIEW_PICTURE"]["HEIGHT"]?>"

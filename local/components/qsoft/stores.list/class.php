@@ -47,7 +47,7 @@ class StoreList extends CBitrixComponent {
         }
 
         if ($this->startResultCache()){
-            $this->arResult['STORES'] = $this->getDataList();
+            $this->arResult = $this->getDataList();
 
             if ($this->arParams['SHOW_MAP'] == 'Y') {
                 $this->arResult['MAP_POINTS'] = $this->getMapPointsList($this->arResult['STORES']);
@@ -105,8 +105,13 @@ class StoreList extends CBitrixComponent {
             $store['EDIT_LINK'] = $arButtons['edit']['edit_element']['ACTION_URL'];
             $store['DELETE_LINK'] = $arButtons['edit']['delete_element']['ACTION_URL'];
 
-            $result[] = $this->getPicture($store, 'PREVIEW_PICTURE');
+            $result['STORES'][] = $this->getPicture($store, 'PREVIEW_PICTURE');
         }
+//        \Bitrix\Main\Diag\Debug::dump($arButtons);
+        if ($arButtons){
+            $result['ADD_LINK'] = $arButtons['edit']["add_element"]['ACTION_URL'];
+        }
+
         return $result;
     }
 

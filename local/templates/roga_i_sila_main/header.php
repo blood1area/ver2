@@ -17,8 +17,6 @@ Loc::loadMessages(__FILE__);
     <?
     $APPLICATION->ShowHead();
 
-    Asset::getInstance()->addString('<link href="' . SITE_TEMPLATE_PATH_DEFAULT.'/favicon.ico" rel="shortcut icon" type="image/x-icon" />');
-
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH_DEFAULT . "/css/base.css");
 
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH_DEFAULT . "/js/bxslider/jquery.bxslider.css");
@@ -51,20 +49,21 @@ Loc::loadMessages(__FILE__);
             <div class="inline-block">
                 <span class="logo inline-block"></span>
             </div>
-            <?$APPLICATION->IncludeComponent(
-	"bitrix:system.auth.form", 
-	"auth_form_header", 
-	array(
-		"FORGOT_PASSWORD_URL" => "",
-		"PROFILE_URL" => "/personal/profile/",
-		"REGISTER_URL" => "/auth/",
-		"SHOW_ERRORS" => "Y",
-		"AUTH_CUSTOM_URL" => "/auth/",
-		"COMPONENT_TEMPLATE" => "auth_form_header",
-		"PERSONAL_AREA_URL" => "/personal/"
-	),
-	false
-);?>
+            <span class="inline-block">
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:system.auth.form",
+                    "auth_form_header",
+                    array(
+                        "FORGOT_PASSWORD_URL" => "",
+                        "PROFILE_URL" => "/personal/profile",
+                        "REGISTER_URL" => "/auth/",
+                        "SHOW_ERRORS" => "Y",
+                        "AUTH_CUSTOM_URL" => "/auth/",
+                        "PERSONAL_AREA_URL" => "/personal/"
+                    ),
+                    false
+                );?>
+            </span>
             <div class="basket_block inline-block">
                 <a href="#" class="basket_product_count inline-block">0</a>
                 <a href="#" class="order_button pie">Оформить заказ</a>

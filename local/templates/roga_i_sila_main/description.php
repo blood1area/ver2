@@ -1,7 +1,9 @@
 <?
+use Bitrix\Main\Localization\Loc;
+
 $arTemplate = array (
-  'NAME' => 'Главная',
-  'DESCRIPTION' => 'Данный шаблон используется для главной страницы сайта.',
+  'NAME' => Loc::getMessage('T_NAME'),
+  'DESCRIPTION' => Loc::getMessage('T_DESC'),
   'SORT' => '1',
   'TYPE' => '',
 );

@@ -6,13 +6,12 @@ if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR']){
 }
 
 if($arResult["FORM_TYPE"] == "login"):?>
-    <nav class="top_menu grey inline-block">
+    <nav class="top_menu grey">
         <a href="<?=$arResult["AUTH_REGISTER_URL"]?>" class="register"><?=GetMessage("AUTH_REGISTER")?></a>
         <a href="<?=$arParams["REGISTER_URL"]?>?backurl=<?=$arResult["BACKURL"];?>" class="auth"><?=GetMessage("AUTH_LOGIN")?></a>
     </nav>
-<?
-else:?>
-    <nav class="top_menu grey inline-block authorize">
+<?else:?>
+    <nav class="top_menu grey authorize">
         <span><?=GetMessage("ACCOST")?></span>
         <a href="<?=$arParams["PROFILE_URL"]?>"><b class="user_name"><?=($arResult["USER_NAME"]?$arResult["USER_NAME"]:$arResult["USER_LOGIN"])?></b></a>
         <a href="<?=$arParams["PERSONAL_AREA_URL"]?>"><?=GetMessage("AUTH_PROFILE")?></a>
