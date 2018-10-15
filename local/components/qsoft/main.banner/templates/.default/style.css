@@ -1,0 +1,39 @@
+.banner{
+    position: relative;
+}
+.banner_content{
+    left: 46px;
+    position: absolute;
+    top: 37px;
+}
+.banner h1{
+    color: #fff;
+    font-size: 3.428em;
+    font-weight: normal;
+    line-height: 1.27em;
+    margin-bottom: 0.29em;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+.banner h2{
+    color: #fff;
+    font-size: 1.286em;
+    font-weight: normal;
+    width: 75%;
+}
+.detail_link{
+    color: #ff7519;
+    text-decoration: none;
+    position: relative;
+    z-index: expression(runtimeStyle.zIndex = 1, this.innerHTML = this.innerHTML + "<span class='detail_link_arrow_ie7'></span>");
+}
+.detail_link:after, .detail_link_arrow_ie7 {
+    background: url("/local/templates/.default/images/sprite.png") 0 -169px no-repeat;
+    content: "";
+    display:inline-block;
+    height: 8px;
+    margin-left: 5px;
+    vertical-align: middle;
+    width: 5px;
+    zoom: 1;
+}

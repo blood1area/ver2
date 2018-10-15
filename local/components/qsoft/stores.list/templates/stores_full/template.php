@@ -11,19 +11,31 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 use Bitrix\Main\Localization\Loc;
+$this->setFrameMode(true);
+$crossOver = false?>
 
-$crossOver = true?>
-<?foreach($arResult["SALONS"] as $arElement):
-    if ($crossOver):
-        $crossOver = false;
-        ?>
-        <section class="shops_block">
-            <div>
-    <?else:
-        $crossOver = true;
-    endif;
-    $this->AddEditAction($arElement['ID'], $arElement['EDIT_LINK'], CIBlock::GetArrayByID($arElement["IBLOCK_ID"], "ELEMENT_EDIT"))	;
-    $this->AddDeleteAction($arElement['ID'], $arElement['DELETE_LINK'], CIBlock::GetArrayByID($arElement["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => Loc::GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));?>
+<?foreach($arResult["STORES"] as $arElement):
+    if (($crossOver = !$crossOver)):?>
+        <section class="shops_block"><div>
+    <?endif;
+
+    $this->AddEditAction(
+        $arElement['ID'],
+        $arElement['EDIT_LINK'],
+            CIBlock::GetArrayByID(
+                $arElement["IBLOCK_ID"],
+                "ELEMENT_EDIT"
+            )
+    )	;
+    $this->AddDeleteAction(
+            $arElement['ID'],
+            $arElement['DELETE_LINK'],
+            CIBlock::GetArrayByID(
+                $arElement["IBLOCK_ID"],
+                "ELEMENT_DELETE"
+            ),
+            array("CONFIRM" => Loc::GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM'))
+    );?>
 
     <figure id="<?=$this->GetEditAreaId($arElement['ID']);?>" class="shops_block_item">
         <img
@@ -45,9 +57,11 @@ $crossOver = true?>
         </figcaption>
     </figure>
 
-    <?if ($crossOver):?>
-            </div>
-        </section>
+    <?if (!$crossOver):?>
+            </div></section>
     <?endif;?>
-
 <?endforeach;?>
+<?if ($crossOver):?>
+    </div></section>
+<?endif;?>
+<div class="clear" style="padding-bottom: 30px;"></div>

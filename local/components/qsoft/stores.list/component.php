@@ -4,48 +4,8 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 use \Bitrix\Main\Loader;
 use \Bitrix\Main\Localization\Loc;
 
-$arParams['CACHE_TIME'] = intval($arParams["CACHE_TIME"]);
-if($arParams["CACHE_TIME"] <= 0) {
-    $arParams["CACHE_TIME"] = CACHE_TIME_DEFAULT;
-}
 
-$arParams["AMOUNT_ELEMENTS"] = intval($arParams["AMOUNT_ELEMENTS"]);
-if($arParams["AMOUNT_ELEMENTS"] <= 0) {
-    $arParams["AMOUNT_ELEMENTS"] = 2;
-}
 
-$arParams['IBLOCK_TYPE'] = trim(htmlspecialchars($arParams['IBLOCK_TYPE']));
-if (empty($arParams['IBLOCK_TYPE'])){
-    ShowError(Loc::GetMessage('NO_IB_T'));
-    return;
-}
-
-$arParams["IBLOCK_ID"] = intval($arParams["IBLOCK_ID"]);
-if ($arParams['IBLOCK_ID'] <= 0) {
-    ShowError(Loc::GetMessage('NO_IB'));
-    return;
-}
-
-$arParams['ALL_SALONS_URL'] = trim(htmlspecialchars($arParams['ALL_SALONS_URL']));
-if (empty($arParams['ALL_SALONS_URL'])){
-    $arParams['ALL_SALONS_URL'] = '/';
-}
-
-if(!Loader::IncludeModule("iblock")){
-    ShowError(Loc::GetMessage("IBLOCK_MODULE_NOT_INSTALLED"));
-    return;
-} else {
-    $arButtons = CIBlock::GetPanelButtons(
-        $arParams['IBLOCK_ID'],
-        0,
-        0,
-        array('SECTION_BUTTONS' => false,)
-    );
-
-    if ($APPLICATION->GetShowIncludeAreas()) {
-        $this->addIncludeAreaIcons(CIBlock::GetComponentMenu($APPLICATION->GetPublicShowMode(), $arButtons));
-    }
-}
 
 if($this->StartResultCache(false))
 {
@@ -89,7 +49,6 @@ if($this->StartResultCache(false))
     $rsIBlockElement->SetUrlTemplates();
 
 	while ($item = $rsIBlockElement->GetNext()) {
-
             $arButtons = CIBlock::GetPanelButtons(
             $item['IBLOCK_ID'],
             $item['ID'],

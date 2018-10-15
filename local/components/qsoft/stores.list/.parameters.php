@@ -1,22 +1,35 @@
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
+use \Bitrix\Main\Localization\Loc;
+
 if(!CModule::IncludeModule("iblock")) {
+	ShowError(Loc::GetMessage('IBLOCK_ERROR'));
     return;
 }
 
-$arIBlockType = CIBlockParameters::GetIBlockTypes();
+$arIBlockTypes = CIBlockParameters::GetIBlockTypes();
 
 $arIBlock=array(
 	"-" => GetMessage("IBLOCK_ANY"),
 );
 
-$rsIBlock = CIBlock::GetList(Array("sort" => "asc"), Array("TYPE" => $arCurrentValues["IBLOCK_TYPE"], "ACTIVE"=>"Y"));
-while($arr=$rsIBlock->Fetch()) {
+$rsIBlock = CIBlock::GetList(
+	Array("sort" => "asc"),
+	Array(
+		"TYPE" => $arCurrentValues["IBLOCK_TYPE"],
+		"ACTIVE"=>"Y"
+	)
+);
+while($arr = $rsIBlock->Fetch()) {
 	$arIBlock[$arr["ID"]] = "[".$arr["ID"]."] ".$arr["NAME"];
 }
 
-$arSorts = array("ASC"=>GetMessage("SORT_ORDER_ASC_TITLE"), "DESC"=>GetMessage("SORT_ORDER_DESC_TITLE"));
+
+$arSorts = array(
+	"ASC"=>GetMessage("SORT_ORDER_ASC_TITLE"),
+	"DESC"=>GetMessage("SORT_ORDER_DESC_TITLE")
+);
 
 $arSortFields = array(
     "ID"=>GetMessage("T_IBLOCK_DESC_FID"),
@@ -35,7 +48,7 @@ $arComponentParameters = array(
 			"PARENT" => "BASE",
 			"NAME" => GetMessage("IBLOCK_TYPE"),
 			"TYPE" => "LIST",
-			"VALUES" => $arIBlockType,
+			"VALUES" => $arIBlockTypes,
 			"REFRESH" => "Y"
 		),
 		"IBLOCK_ID" => array(
